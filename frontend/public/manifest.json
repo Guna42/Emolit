@@ -1,0 +1,9 @@
+{
+  "short_name": "Emolit",
+  "name": "Emolit",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff6fb1",
+  "background_color": "#fff5fa"
+}

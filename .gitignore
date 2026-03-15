@@ -1,0 +1,9 @@
+node_modules/ 
+.env 
+venv/ 
+frontend/build/ 
+frontend/android/ 
+__pycache__/ 
+*.pyc 
+*.jks 
+frontend/node_modules/ 

@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #1a6b5a;
+    --secondary: #2e8b6e;
+    --accent: #3aaf87;
+    --light-bg: #e4f9f2;
+    --dark-bg: #0a1f1a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* 🎨 PREMIUM CARD EFFECTS */
+.card-stack-effect {
+    position: relative;
+}
+
+.card-stack-effect::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 2rem;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 🌀 ULTRA-SMOOTH ANIMATIONS */
+@keyframes reveal-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-reveal {
+    animation: reveal-up 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes pulse-soft {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+}
+
+/* 🔮 MIRROR & PREMIUM EFFECTS */
+.mirror-text {
+    background: linear-gradient(135deg, var(--emolit-emerald) 0%, var(--emolit-indigo) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    filter: drop-shadow(0 10px 20px rgba(16, 185, 129, 0.2));
+}
+
+.emotion-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow:
+        0 10px 30px -5px rgba(0, 0, 0, 0.04),
+        0 20px 60px -10px rgba(0, 0, 0, 0.02),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.emotion-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 70px -15px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 1);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* 🛠️ UTILITIES */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--emolit-emerald);
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 🌌 NEURAL BACKGROUND */
+.neural-bg {
+    background: radial-gradient(circle at top left, #1a6b5a 0%, transparent 40%),
+                radial-gradient(circle at bottom right, #2e8b6e 0%, transparent 40%),
+                #0a1f1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.neural-node {
+    position: absolute;
+    background: rgba(58, 175, 135, 0.2);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: node-float 10s infinite alternate ease-in-out;
+}
+
+@keyframes node-float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, -50px) scale(1.2); }
+}
+
+/* 💎 LUXURY INPUTS */
+.luxury-input {
+    @apply w-full pl-12 pr-4 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md focus:bg-white/10 focus:border-accent/40 focus:ring-4 focus:ring-accent/5 transition-all outline-none font-body font-bold text-white placeholder-white/20;
+}
+
+/* ✨ SHIMMER EFFECT */
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes waveform {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+}
+
+.animate-waveform {
+    animation: waveform 0.6s ease-in-out infinite alternate;
+}

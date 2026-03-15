@@ -1,0 +1,1958 @@
+{
+  "Angry": {
+    "Mad": {
+      "Humiliated": {
+        "intensity": 5,
+        "definition": "Feeling deeply shamed or degraded in front of others.",
+        "synonyms": [
+          "Mortified",
+          "Disgraced",
+          "Degraded"
+        ],
+        "example": "I felt humiliated when my mistake was pointed out in the meeting.",
+        "reflection_prompt": "What situation made you feel exposed or shamed recently?",
+        "growth_tip": "Humiliation often stems from vulnerability being exploited. Recognizing this can help you set protective boundaries.",
+        "body_signal": "Flushed face, downcast eyes, desire to hide"
+      },
+      "Let Down": {
+        "intensity": 4,
+        "definition": "Feeling disappointed and betrayed by someone's failure to meet expectations.",
+        "synonyms": [
+          "Disappointed",
+          "Betrayed",
+          "Failed"
+        ],
+        "example": "I felt let down when they didn't show up after promising to help.",
+        "reflection_prompt": "Who or what has recently failed to meet your expectations?",
+        "growth_tip": "Being let down reveals the gap between expectations and reality. Consider if expectations were clearly communicated.",
+        "body_signal": "Heavy chest, slumped shoulders, sigh"
+      },
+      "Betrayed": {
+        "intensity": 5,
+        "definition": "Feeling deeply hurt by someone's disloyalty or deception.",
+        "synonyms": [
+          "Deceived",
+          "Double-crossed",
+          "Stabbed in the back"
+        ],
+        "example": "I felt betrayed when I discovered they had been lying to me.",
+        "reflection_prompt": "Where has trust been broken in your life?",
+        "growth_tip": "Betrayal is a profound breach of trust. Healing requires acknowledging the pain and deciding what trust means going forward.",
+        "body_signal": "Tightness in chest, nausea, sense of shock"
+      },
+      "Disrespected": {
+        "intensity": 4,
+        "definition": "Feeling that your worth or dignity has been dismissed or undermined.",
+        "synonyms": [
+          "Insulted",
+          "Degraded",
+          "Belittled"
+        ],
+        "example": "I felt disrespected when they spoke over me repeatedly.",
+        "reflection_prompt": "When have you felt your value wasn't acknowledged?",
+        "growth_tip": "Disrespect highlights where your boundaries need reinforcement. Your worth isn't determined by others' treatment.",
+        "body_signal": "Tense jaw, raised chin, defensive posture"
+      }
+    },
+    "Frustrated": {
+      "Annoyed": {
+        "intensity": 2,
+        "definition": "Feeling mildly irritated or bothered by something.",
+        "synonyms": [
+          "Irritated",
+          "Bothered",
+          "Agitated"
+        ],
+        "example": "I felt annoyed when the meeting started late again.",
+        "reflection_prompt": "What small frustration has been building up for you lately?",
+        "growth_tip": "Minor irritation often signals unmet expectations. Clarifying them can reduce frustration.",
+        "body_signal": "Tight jaw, shallow breathing, eye roll"
+      },
+      "Irritated": {
+        "intensity": 3,
+        "definition": "Feeling increasingly bothered and impatient with a situation.",
+        "synonyms": [
+          "Aggravated",
+          "Provoked",
+          "Nettled"
+        ],
+        "example": "I felt irritated by the constant interruptions while working.",
+        "reflection_prompt": "What keeps disrupting your sense of flow or peace?",
+        "growth_tip": "Irritation is a signal that something is persistently interfering with your needs or goals.",
+        "body_signal": "Fidgeting, tapping, restless movements"
+      },
+      "Exasperated": {
+        "intensity": 4,
+        "definition": "Feeling intensely frustrated and worn out by repeated problems.",
+        "synonyms": [
+          "Fed up",
+          "Overwhelmed",
+          "Aggravated"
+        ],
+        "example": "I was exasperated after explaining the same thing five times.",
+        "reflection_prompt": "What recurring situation is draining your patience?",
+        "growth_tip": "Repetition without change can exhaust us. Consider setting clearer boundaries or changing your approach.",
+        "body_signal": "Raised voice, clenched fists, deep sighs"
+      },
+      "Agitated": {
+        "intensity": 4,
+        "definition": "Feeling restless and disturbed, unable to settle.",
+        "synonyms": [
+          "Restless",
+          "Unsettled",
+          "Perturbed"
+        ],
+        "example": "I felt agitated waiting for the delayed results.",
+        "reflection_prompt": "What is making you feel unable to relax right now?",
+        "growth_tip": "Agitation often comes from uncertainty or lack of control. Identify what you can influence.",
+        "body_signal": "Pacing, inability to sit still, racing thoughts"
+      }
+    },
+    "Bitter": {
+      "Resentful": {
+        "intensity": 4,
+        "definition": "Feeling bitter or angry due to unfair treatment.",
+        "synonyms": [
+          "Indignant",
+          "Aggrieved",
+          "Wronged"
+        ],
+        "example": "I felt resentful when my work wasn't acknowledged.",
+        "reflection_prompt": "Where might you be holding onto unspoken resentment?",
+        "growth_tip": "Resentment often points to boundaries that were crossed or needs that weren't met.",
+        "body_signal": "Heavy chest, tense shoulders, bitter taste"
+      },
+      "Indignant": {
+        "intensity": 4,
+        "definition": "Feeling anger at what is perceived as unfair or unjust treatment.",
+        "synonyms": [
+          "Outraged",
+          "Affronted",
+          "Offended"
+        ],
+        "example": "I felt indignant when they took credit for my idea.",
+        "reflection_prompt": "What injustice is fueling your anger?",
+        "growth_tip": "Indignation can drive positive change when channeled into constructive action.",
+        "body_signal": "Straightened spine, clenched fists, raised voice"
+      },
+      "Violated": {
+        "intensity": 5,
+        "definition": "Feeling that your boundaries or rights have been severely transgressed.",
+        "synonyms": [
+          "Invaded",
+          "Transgressed",
+          "Disrespected"
+        ],
+        "example": "I felt violated when they went through my personal belongings.",
+        "reflection_prompt": "Where have your boundaries been crossed without permission?",
+        "growth_tip": "Feeling violated demands acknowledging the boundary breach and reinforcing your limits.",
+        "body_signal": "Nausea, trembling, protective body language"
+      },
+      "Jealous": {
+        "intensity": 3,
+        "definition": "Feeling resentful of someone else's advantages or possessions.",
+        "synonyms": [
+          "Envious",
+          "Covetous",
+          "Green with envy"
+        ],
+        "example": "I felt jealous seeing their success while I struggled.",
+        "reflection_prompt": "What do others have that you wish you had?",
+        "growth_tip": "Jealousy can reveal your unmet desires or values. Use it as information about what matters to you.",
+        "body_signal": "Tight stomach, comparing thoughts, withdrawal"
+      }
+    },
+    "Critical": {
+      "Judgmental": {
+        "intensity": 3,
+        "definition": "Forming negative opinions or evaluations about others.",
+        "synonyms": [
+          "Disapproving",
+          "Condemning",
+          "Fault-finding"
+        ],
+        "example": "I felt judgmental about their life choices.",
+        "reflection_prompt": "Where are you being harshly critical of others or yourself?",
+        "growth_tip": "Judgment often reflects our own insecurities or unexamined values. Curiosity is a more generous alternative.",
+        "body_signal": "Narrowed eyes, pursed lips, crossed arms"
+      },
+      "Skeptical": {
+        "intensity": 2,
+        "definition": "Doubting or questioning the truth or validity of something.",
+        "synonyms": [
+          "Doubtful",
+          "Suspicious",
+          "Distrustful"
+        ],
+        "example": "I felt skeptical about their promises after past disappointments.",
+        "reflection_prompt": "What are you finding hard to believe or trust?",
+        "growth_tip": "Healthy skepticism protects us, but excessive doubt can prevent connection and growth.",
+        "body_signal": "Raised eyebrow, tilted head, cautious stance"
+      },
+      "Dismissive": {
+        "intensity": 3,
+        "definition": "Treating something or someone as unworthy of serious consideration.",
+        "synonyms": [
+          "Contemptuous",
+          "Disdainful",
+          "Scornful"
+        ],
+        "example": "I felt dismissive of their concerns, thinking they were overreacting.",
+        "reflection_prompt": "Who or what are you refusing to take seriously?",
+        "growth_tip": "Dismissiveness can be a defense against engaging with uncomfortable truths or emotions.",
+        "body_signal": "Eye rolling, turning away, condescending tone"
+      },
+      "Contemptuous": {
+        "intensity": 4,
+        "definition": "Feeling deep disrespect mixed with disgust toward someone or something.",
+        "synonyms": [
+          "Scornful",
+          "Disdainful",
+          "Derisive"
+        ],
+        "example": "I felt contemptuous of their dishonest behavior.",
+        "reflection_prompt": "What or who do you hold in contempt, and why?",
+        "growth_tip": "Contempt is toxic to relationships. It often masks deeper hurts that need addressing.",
+        "body_signal": "Sneering, looking down, cold tone"
+      }
+    },
+    "Aggressive": {
+      "Hostile": {
+        "intensity": 5,
+        "definition": "Feeling unfriendly and antagonistic, ready to attack or confront.",
+        "synonyms": [
+          "Antagonistic",
+          "Confrontational",
+          "Combative"
+        ],
+        "example": "I felt hostile during the argument, wanting to hurt them with my words.",
+        "reflection_prompt": "What is making you feel combative or ready to attack?",
+        "growth_tip": "Hostility often covers deeper pain or fear. Pause to identify what you're really protecting.",
+        "body_signal": "Tense muscles, aggressive stance, loud voice"
+      },
+      "Provoked": {
+        "intensity": 4,
+        "definition": "Feeling deliberately angered or stimulated to react.",
+        "synonyms": [
+          "Goaded",
+          "Incited",
+          "Triggered"
+        ],
+        "example": "I felt provoked by their intentional jabs at my insecurities.",
+        "reflection_prompt": "What words or actions consistently trigger your anger?",
+        "growth_tip": "Knowing your triggers helps you respond thoughtfully rather than react impulsively.",
+        "body_signal": "Rising heat, clenched jaw, sudden tension"
+      },
+      "Furious": {
+        "intensity": 5,
+        "definition": "Feeling extremely angry and out of control with rage.",
+        "synonyms": [
+          "Enraged",
+          "Livid",
+          "Incensed"
+        ],
+        "example": "I felt furious when I discovered the deliberate sabotage.",
+        "reflection_prompt": "What has pushed you to the edge of your anger?",
+        "growth_tip": "Fury is intense and demands safe expression. Physical release or time-out can prevent harmful actions.",
+        "body_signal": "Shaking, racing heart, tunnel vision"
+      },
+      "Rageful": {
+        "intensity": 5,
+        "definition": "Experiencing violent, uncontrolled anger.",
+        "synonyms": [
+          "Enraged",
+          "Incensed",
+          "Wrathful"
+        ],
+        "example": "I felt rageful and wanted to destroy everything around me.",
+        "reflection_prompt": "What deep wound is this rage protecting?",
+        "growth_tip": "Rage at this intensity needs immediate physical safety and later professional support to process underlying trauma.",
+        "body_signal": "Explosive energy, loss of rational thought, violent impulses"
+      }
+    },
+    "Distant": {
+      "Withdrawn": {
+        "intensity": 3,
+        "definition": "Pulling back emotionally or physically from connection.",
+        "synonyms": [
+          "Detached",
+          "Removed",
+          "Isolated"
+        ],
+        "example": "I felt withdrawn after the conflict, needing space to process.",
+        "reflection_prompt": "What are you pulling away from, and why?",
+        "growth_tip": "Withdrawal can be self-protective. Ensure it's temporary restoration, not permanent isolation.",
+        "body_signal": "Turning away, minimal eye contact, quiet voice"
+      },
+      "Apathetic": {
+        "intensity": 2,
+        "definition": "Feeling indifferent and lacking interest or concern.",
+        "synonyms": [
+          "Indifferent",
+          "Uninterested",
+          "Detached"
+        ],
+        "example": "I felt apathetic about the outcome, too tired to care anymore.",
+        "reflection_prompt": "What have you stopped caring about, and what does that mean?",
+        "growth_tip": "Apathy can signal burnout or depression. It may be time to reassess priorities or seek support.",
+        "body_signal": "Flat affect, low energy, shrugging"
+      },
+      "Cold": {
+        "intensity": 3,
+        "definition": "Emotionally unresponsive and distant from others.",
+        "synonyms": [
+          "Detached",
+          "Aloof",
+          "Unfeeling"
+        ],
+        "example": "I felt cold toward them, unable to access warmth or compassion.",
+        "reflection_prompt": "Who are you shutting out emotionally, and why?",
+        "growth_tip": "Emotional coldness often protects against hurt, but it also prevents intimacy and healing.",
+        "body_signal": "Stiff posture, monotone voice, emotional numbness"
+      },
+      "Numb": {
+        "intensity": 4,
+        "definition": "Feeling emotionally deadened, unable to feel anything.",
+        "synonyms": [
+          "Emotionless",
+          "Deadened",
+          "Disconnected"
+        ],
+        "example": "I felt numb after hearing the devastating news, like I couldn't process it.",
+        "reflection_prompt": "What emotion are you avoiding by going numb?",
+        "growth_tip": "Numbness is a protective shutdown. Gentle reconnection with sensation and feeling is needed.",
+        "body_signal": "Empty feeling, disconnection from body, blank stare"
+      }
+    }
+  },
+  "Sad": {
+    "Hurt": {
+      "Embarrassed": {
+        "intensity": 3,
+        "definition": "Feeling self-conscious and ashamed due to an awkward situation.",
+        "synonyms": [
+          "Mortified",
+          "Chagrined",
+          "Flustered"
+        ],
+        "example": "I felt embarrassed when I tripped in front of everyone.",
+        "reflection_prompt": "What recent situation made you feel exposed or foolish?",
+        "growth_tip": "Embarrassment fades with self-compassion and the recognition that everyone makes mistakes.",
+        "body_signal": "Blushing, avoiding eye contact, nervous laughter"
+      },
+      "Disappointed": {
+        "intensity": 3,
+        "definition": "Feeling let down when expectations are not met.",
+        "synonyms": [
+          "Let down",
+          "Dismayed",
+          "Disheartened"
+        ],
+        "example": "I felt disappointed when the project didn't go as planned.",
+        "reflection_prompt": "What hope or expectation wasn't fulfilled?",
+        "growth_tip": "Disappointment is the gap between hope and reality. Adjusting expectations or efforts can help.",
+        "body_signal": "Drooping shoulders, sighing, downcast eyes"
+      },
+      "Rejected": {
+        "intensity": 4,
+        "definition": "Feeling dismissed, excluded, or not accepted.",
+        "synonyms": [
+          "Spurned",
+          "Excluded",
+          "Unwanted"
+        ],
+        "example": "I felt rejected when they didn't invite me to the gathering.",
+        "reflection_prompt": "Where have you felt unwanted or excluded recently?",
+        "growth_tip": "Rejection hurts, but it doesn't define your worth. Seek spaces where you are valued.",
+        "body_signal": "Tightness in throat, tears, withdrawing"
+      },
+      "Betrayed": {
+        "intensity": 5,
+        "definition": "Feeling wounded by someone's breach of trust or loyalty.",
+        "synonyms": [
+          "Deceived",
+          "Backstabbed",
+          "Double-crossed"
+        ],
+        "example": "I felt betrayed when they shared my secret.",
+        "reflection_prompt": "Who broke your trust, and how can you begin to heal?",
+        "growth_tip": "Betrayal requires grieving the loss of trust and deciding whether to rebuild or release the relationship.",
+        "body_signal": "Chest pain, difficulty breathing, shock"
+      }
+    },
+    "Lonely": {
+      "Isolated": {
+        "intensity": 3,
+        "definition": "Feeling separated or disconnected from others.",
+        "synonyms": [
+          "Alone",
+          "Excluded",
+          "Disconnected"
+        ],
+        "example": "I felt isolated after moving to a new city.",
+        "reflection_prompt": "When do you feel most disconnected from others?",
+        "growth_tip": "Small intentional connections can slowly rebuild belonging.",
+        "body_signal": "Low energy, slumped posture, heaviness"
+      },
+      "Abandoned": {
+        "intensity": 5,
+        "definition": "Feeling left behind or deserted by someone important.",
+        "synonyms": [
+          "Forsaken",
+          "Deserted",
+          "Left behind"
+        ],
+        "example": "I felt abandoned when they suddenly stopped communicating.",
+        "reflection_prompt": "Who or what have you felt left behind by?",
+        "growth_tip": "Abandonment wounds run deep. Healing involves grieving the loss and rebuilding self-trust.",
+        "body_signal": "Hollowness in chest, tears, clinging behaviors"
+      },
+      "Excluded": {
+        "intensity": 3,
+        "definition": "Feeling deliberately left out of a group or activity.",
+        "synonyms": [
+          "Left out",
+          "Ostracized",
+          "Rejected"
+        ],
+        "example": "I felt excluded when they made plans without me.",
+        "reflection_prompt": "Where do you feel like you don't belong?",
+        "growth_tip": "Exclusion stings, but finding your people means moving toward those who welcome you.",
+        "body_signal": "Sinking feeling, withdrawal, looking down"
+      },
+      "Disconnected": {
+        "intensity": 3,
+        "definition": "Feeling emotionally cut off from others or from oneself.",
+        "synonyms": [
+          "Detached",
+          "Separate",
+          "Distant"
+        ],
+        "example": "I felt disconnected during the conversation, like I wasn't really there.",
+        "reflection_prompt": "What are you disconnected from—others, yourself, or both?",
+        "growth_tip": "Reconnection starts with small moments of presence and vulnerability.",
+        "body_signal": "Foggy feeling, emotional flatness, spacing out"
+      }
+    },
+    "Vulnerable": {
+      "Fragile": {
+        "intensity": 4,
+        "definition": "Feeling delicate and easily broken or hurt.",
+        "synonyms": [
+          "Delicate",
+          "Brittle",
+          "Tender"
+        ],
+        "example": "I felt fragile after the loss, like any small thing could break me.",
+        "reflection_prompt": "What is making you feel particularly sensitive right now?",
+        "growth_tip": "Fragility calls for gentle self-care and protection while you heal.",
+        "body_signal": "Shakiness, tears close to surface, protective posture"
+      },
+      "Insecure": {
+        "intensity": 3,
+        "definition": "Feeling uncertain about yourself or your place.",
+        "synonyms": [
+          "Uncertain",
+          "Self-doubting",
+          "Unsure"
+        ],
+        "example": "I felt insecure about my abilities in the new role.",
+        "reflection_prompt": "What are you doubting about yourself?",
+        "growth_tip": "Insecurity often needs evidence of capability. Start with small wins.",
+        "body_signal": "Fidgeting, seeking reassurance, comparing self to others"
+      },
+      "Helpless": {
+        "intensity": 4,
+        "definition": "Feeling unable to control or improve a difficult situation.",
+        "synonyms": [
+          "Powerless",
+          "Exposed",
+          "Dependent"
+        ],
+        "example": "I felt helpless watching things fall apart.",
+        "reflection_prompt": "Where do you wish you had more control?",
+        "growth_tip": "Focus on what is within your influence, even if it's small.",
+        "body_signal": "Tight throat, watery eyes, slumped shoulders"
+      },
+      "Powerless": {
+        "intensity": 4,
+        "definition": "Feeling completely without power or influence over a situation.",
+        "synonyms": [
+          "Helpless",
+          "Impotent",
+          "Defenseless"
+        ],
+        "example": "I felt powerless to stop the negative outcome.",
+        "reflection_prompt": "What situation makes you feel you have no control?",
+        "growth_tip": "Even in powerless situations, you can control your response and where you place your energy.",
+        "body_signal": "Heaviness, paralysis, deep sadness"
+      }
+    },
+    "Despairing": {
+      "Hopeless": {
+        "intensity": 5,
+        "definition": "Feeling that there is no possibility of improvement or success.",
+        "synonyms": [
+          "Despondent",
+          "Defeated",
+          "Desperate"
+        ],
+        "example": "I felt hopeless about ever finding a solution.",
+        "reflection_prompt": "What situation feels impossible to change?",
+        "growth_tip": "Hopelessness can be a sign of depression. Reach out for professional support.",
+        "body_signal": "Heavy limbs, difficulty moving, dark thoughts"
+      },
+      "Grief-stricken": {
+        "intensity": 5,
+        "definition": "Overwhelmed by deep sorrow and loss.",
+        "synonyms": [
+          "Heartbroken",
+          "Devastated",
+          "Mourning"
+        ],
+        "example": "I felt grief-stricken after losing my loved one.",
+        "reflection_prompt": "What loss are you grieving?",
+        "growth_tip": "Grief has no timeline. Allow yourself to feel it fully with support from others.",
+        "body_signal": "Sobbing, chest pain, physical exhaustion"
+      },
+      "Depressed": {
+        "intensity": 5,
+        "definition": "Experiencing persistent sadness and loss of interest in life.",
+        "synonyms": [
+          "Melancholic",
+          "Despondent",
+          "Down"
+        ],
+        "example": "I felt depressed, unable to find joy in anything anymore.",
+        "reflection_prompt": "How long have you been feeling this heaviness?",
+        "growth_tip": "Depression is a medical condition. Professional help can make a profound difference.",
+        "body_signal": "Fatigue, sleep changes, emotional numbness"
+      },
+      "Empty": {
+        "intensity": 4,
+        "definition": "Feeling hollow and devoid of emotion or purpose.",
+        "synonyms": [
+          "Hollow",
+          "Void",
+          "Barren"
+        ],
+        "example": "I felt empty inside, like nothing mattered.",
+        "reflection_prompt": "What used to fill you that's now missing?",
+        "growth_tip": "Emptiness signals a need to reconnect with meaning and purpose.",
+        "body_signal": "Hollowness in chest, lack of motivation, blankness"
+      }
+    },
+    "Guilty": {
+      "Ashamed": {
+        "intensity": 4,
+        "definition": "Feeling deep embarrassment or disgrace about oneself.",
+        "synonyms": [
+          "Mortified",
+          "Disgraced",
+          "Humiliated"
+        ],
+        "example": "I felt ashamed of my past behavior.",
+        "reflection_prompt": "What are you ashamed of, and is it truly yours to carry?",
+        "growth_tip": "Shame thrives in secrecy. Speaking it aloud to a trusted person can reduce its power.",
+        "body_signal": "Hiding face, curling inward, avoiding eye contact"
+      },
+      "Remorseful": {
+        "intensity": 4,
+        "definition": "Feeling deep regret and guilt over a wrong action.",
+        "synonyms": [
+          "Regretful",
+          "Contrite",
+          "Penitent"
+        ],
+        "example": "I felt remorseful for hurting them with my words.",
+        "reflection_prompt": "What action do you wish you could undo?",
+        "growth_tip": "Remorse can lead to meaningful apology and changed behavior.",
+        "body_signal": "Heavy heart, tears, desire to make amends"
+      },
+      "Regretful": {
+        "intensity": 3,
+        "definition": "Feeling sorry about something you did or didn't do.",
+        "synonyms": [
+          "Sorry",
+          "Apologetic",
+          "Rueful"
+        ],
+        "example": "I felt regretful about not speaking up when I had the chance.",
+        "reflection_prompt": "What decision do you wish you could revisit?",
+        "growth_tip": "Regret teaches us about our values. Use it to make better choices going forward.",
+        "body_signal": "Sighing, looking back, wishing"
+      },
+      "Self-blaming": {
+        "intensity": 4,
+        "definition": "Holding yourself responsible for negative outcomes, often excessively.",
+        "synonyms": [
+          "Self-reproaching",
+          "Self-condemning",
+          "Self-critical"
+        ],
+        "example": "I felt self-blaming for the team's failure, even though it wasn't all my fault.",
+        "reflection_prompt": "What are you blaming yourself for that may not be entirely your responsibility?",
+        "growth_tip": "Distinguish between healthy accountability and toxic self-blame. You're human, not perfect.",
+        "body_signal": "Hunched posture, negative self-talk, rumination"
+      }
+    },
+    "Disappointed": {
+      "Discouraged": {
+        "intensity": 3,
+        "definition": "Feeling disheartened and lacking confidence to continue.",
+        "synonyms": [
+          "Disheartened",
+          "Demoralized",
+          "Dispirited"
+        ],
+        "example": "I felt discouraged after multiple rejections.",
+        "reflection_prompt": "What setback has made you question continuing?",
+        "growth_tip": "Discouragement is temporary. Small steps forward can rebuild momentum.",
+        "body_signal": "Slumped shoulders, low energy, hesitation"
+      },
+      "Dismayed": {
+        "intensity": 3,
+        "definition": "Feeling shocked and disappointed by an unwelcome surprise.",
+        "synonyms": [
+          "Shocked",
+          "Appalled",
+          "Distressed"
+        ],
+        "example": "I felt dismayed by the sudden negative turn of events.",
+        "reflection_prompt": "What unexpected disappointment caught you off guard?",
+        "growth_tip": "Dismay passes as you process the surprise and adapt to new reality.",
+        "body_signal": "Wide eyes, hand to mouth, stepping back"
+      },
+      "Let down": {
+        "intensity": 3,
+        "definition": "Feeling disappointed when expectations are not met by others.",
+        "synonyms": [
+          "Disappointed",
+          "Betrayed",
+          "Failed"
+        ],
+        "example": "I felt let down when they didn't follow through on their promise.",
+        "reflection_prompt": "Who or what failed to meet your expectations?",
+        "growth_tip": "Being let down is an opportunity to clarify expectations and assess reliability.",
+        "body_signal": "Sinking feeling, sighing, sadness"
+      },
+      "Unfulfilled": {
+        "intensity": 3,
+        "definition": "Feeling that your potential or desires are not being realized.",
+        "synonyms": [
+          "Unsatisfied",
+          "Incomplete",
+          "Wanting"
+        ],
+        "example": "I felt unfulfilled in my career, knowing I could do more.",
+        "reflection_prompt": "What dreams or potentials are going unrealized?",
+        "growth_tip": "Unfulfillment points to deeper longings. Explore what would bring meaning.",
+        "body_signal": "Restlessness, yearning, sense of incompleteness"
+      }
+    }
+  },
+  "Happy": {
+    "Content": {
+      "Satisfied": {
+        "intensity": 3,
+        "definition": "Feeling pleased and fulfilled with a situation or outcome.",
+        "synonyms": [
+          "Pleased",
+          "Fulfilled",
+          "Gratified"
+        ],
+        "example": "I felt satisfied after completing the challenging project.",
+        "reflection_prompt": "What recently gave you a sense of completion?",
+        "growth_tip": "Savoring satisfaction strengthens positive emotions and motivation.",
+        "body_signal": "Relaxed body, gentle smile, ease"
+      },
+      "At ease": {
+        "intensity": 2,
+        "definition": "Feeling comfortable and free from worry or tension.",
+        "synonyms": [
+          "Comfortable",
+          "Relaxed",
+          "Untroubled"
+        ],
+        "example": "I felt at ease in their welcoming presence.",
+        "reflection_prompt": "Where or with whom do you feel most relaxed?",
+        "growth_tip": "Cultivating ease requires creating safe, comfortable environments and relationships.",
+        "body_signal": "Open posture, slow breathing, softness"
+      },
+      "Peaceful": {
+        "intensity": 3,
+        "definition": "Feeling tranquil and free from disturbance or agitation.",
+        "synonyms": [
+          "Tranquil",
+          "Serene",
+          "Calm"
+        ],
+        "example": "I felt peaceful watching the sunset over the water.",
+        "reflection_prompt": "What brings you into a state of peace?",
+        "growth_tip": "Peace is both found and created through practices like meditation, nature, and simplicity.",
+        "body_signal": "Deep breathing, stillness, soft gaze"
+      },
+      "Relaxed": {
+        "intensity": 2,
+        "definition": "Feeling free from tension and anxiety.",
+        "synonyms": [
+          "At ease",
+          "Calm",
+          "Loose"
+        ],
+        "example": "I felt relaxed after the stressful week ended.",
+        "reflection_prompt": "What helps you release tension?",
+        "growth_tip": "Regular relaxation practices prevent chronic stress and burnout.",
+        "body_signal": "Loose muscles, slow movements, comfort"
+      }
+    },
+    "Proud": {
+      "Confident": {
+        "intensity": 4,
+        "definition": "Feeling self-assured and certain in your abilities.",
+        "synonyms": [
+          "Self-assured",
+          "Certain",
+          "Assured"
+        ],
+        "example": "I felt confident presenting my ideas to the team.",
+        "reflection_prompt": "What are you genuinely confident about?",
+        "growth_tip": "Confidence grows through preparation and celebrating small successes.",
+        "body_signal": "Upright posture, steady voice, direct eye contact"
+      },
+      "Accomplished": {
+        "intensity": 4,
+        "definition": "Feeling satisfied and fulfilled after achieving something meaningful.",
+        "synonyms": [
+          "Fulfilled",
+          "Successful",
+          "Achieved"
+        ],
+        "example": "I felt accomplished after finishing the marathon.",
+        "reflection_prompt": "What recent achievement are you not fully appreciating?",
+        "growth_tip": "Recognizing accomplishments strengthens motivation and self-worth.",
+        "body_signal": "Relaxed shoulders, uplifted posture, smile"
+      },
+      "Fulfilled": {
+        "intensity": 4,
+        "definition": "Feeling deeply satisfied and complete in your purpose or achievements.",
+        "synonyms": [
+          "Satisfied",
+          "Complete",
+          "Gratified"
+        ],
+        "example": "I felt fulfilled knowing my work made a real difference.",
+        "reflection_prompt": "What gives you the deepest sense of meaning?",
+        "growth_tip": "Fulfillment comes from aligning actions with values and purpose.",
+        "body_signal": "Deep contentment, warmth in chest, wholeness"
+      },
+      "Successful": {
+        "intensity": 4,
+        "definition": "Feeling accomplished and effective in achieving your goals.",
+        "synonyms": [
+          "Accomplished",
+          "Triumphant",
+          "Victorious"
+        ],
+        "example": "I felt successful after the presentation was well-received.",
+        "reflection_prompt": "How do you define success for yourself?",
+        "growth_tip": "True success is measured by personal values, not external standards alone.",
+        "body_signal": "Energy, straightened posture, brightness"
+      }
+    },
+    "Excited": {
+      "Eager": {
+        "intensity": 3,
+        "definition": "Feeling enthusiastic and keen to do something.",
+        "synonyms": [
+          "Keen",
+          "Enthusiastic",
+          "Anticipatory"
+        ],
+        "example": "I felt eager to start the new adventure.",
+        "reflection_prompt": "What are you looking forward to with enthusiasm?",
+        "growth_tip": "Eagerness is motivating energy. Channel it into preparation and action.",
+        "body_signal": "Forward lean, bright eyes, restless energy"
+      },
+      "Energetic": {
+        "intensity": 3,
+        "definition": "Feeling full of vitality and vigor.",
+        "synonyms": [
+          "Vigorous",
+          "Dynamic",
+          "Lively"
+        ],
+        "example": "I felt energetic and ready to tackle any challenge.",
+        "reflection_prompt": "What activities or situations energize you?",
+        "growth_tip": "Protect your energy sources and create rhythms that sustain vitality.",
+        "body_signal": "Quick movements, alertness, readiness"
+      },
+      "Thrilled": {
+        "intensity": 4,
+        "definition": "Feeling extremely excited and delighted.",
+        "synonyms": [
+          "Exhilarated",
+          "Ecstatic",
+          "Elated"
+        ],
+        "example": "I felt thrilled when I got the amazing news.",
+        "reflection_prompt": "What recently made your heart race with excitement?",
+        "growth_tip": "Savor thrilling moments—they become cherished memories.",
+        "body_signal": "Racing heart, wide smile, animated gestures"
+      },
+      "Elated": {
+        "intensity": 5,
+        "definition": "Feeling intensely happy and exhilarated.",
+        "synonyms": [
+          "Euphoric",
+          "Overjoyed",
+          "Ecstatic"
+        ],
+        "example": "I felt elated receiving the promotion I'd worked so hard for.",
+        "reflection_prompt": "What achievement or moment brought you pure joy?",
+        "growth_tip": "Elation is powerful but temporary. Anchor it with gratitude.",
+        "body_signal": "Lightness, laughter, bursting energy"
+      }
+    },
+    "Grateful": {
+      "Appreciative": {
+        "intensity": 3,
+        "definition": "Feeling thankful and recognizing value in something or someone.",
+        "synonyms": [
+          "Thankful",
+          "Grateful",
+          "Recognizing"
+        ],
+        "example": "I felt appreciative of their support during difficult times.",
+        "reflection_prompt": "Who or what are you grateful for today?",
+        "growth_tip": "Regular appreciation practice increases overall wellbeing and relationship quality.",
+        "body_signal": "Warmth in chest, smile, reaching out"
+      },
+      "Thankful": {
+        "intensity": 3,
+        "definition": "Feeling pleased and relieved about something good.",
+        "synonyms": [
+          "Grateful",
+          "Appreciative",
+          "Obliged"
+        ],
+        "example": "I felt thankful for the unexpected help.",
+        "reflection_prompt": "What unexpected blessing appeared recently?",
+        "growth_tip": "Expressing thanks strengthens bonds and multiplies joy.",
+        "body_signal": "Soft eyes, warmth, gentle smile"
+      },
+      "Blessed": {
+        "intensity": 4,
+        "definition": "Feeling fortunate and favored with good things in life.",
+        "synonyms": [
+          "Fortunate",
+          "Lucky",
+          "Favored"
+        ],
+        "example": "I felt blessed to have such wonderful people in my life.",
+        "reflection_prompt": "What aspects of your life feel like gifts?",
+        "growth_tip": "Recognizing blessings shifts focus from lack to abundance.",
+        "body_signal": "Full heart, tears of joy, openness"
+      },
+      "Moved": {
+        "intensity": 4,
+        "definition": "Feeling deeply touched emotionally by something meaningful.",
+        "synonyms": [
+          "Touched",
+          "Affected",
+          "Stirred"
+        ],
+        "example": "I felt moved by their genuine kindness and generosity.",
+        "reflection_prompt": "What recently touched your heart deeply?",
+        "growth_tip": "Being moved opens us to connection and meaning.",
+        "body_signal": "Tears, lump in throat, hand to heart"
+      }
+    },
+    "Optimistic": {
+      "Hopeful": {
+        "intensity": 3,
+        "definition": "Feeling that good things are possible or likely.",
+        "synonyms": [
+          "Expectant",
+          "Positive",
+          "Encouraged"
+        ],
+        "example": "I felt hopeful about the future after the positive conversation.",
+        "reflection_prompt": "What are you hoping for?",
+        "growth_tip": "Hope is an active choice and a powerful motivator for change.",
+        "body_signal": "Lifted chin, forward gaze, lightness"
+      },
+      "Encouraged": {
+        "intensity": 3,
+        "definition": "Feeling supported and given confidence to continue.",
+        "synonyms": [
+          "Inspired",
+          "Heartened",
+          "Emboldened"
+        ],
+        "example": "I felt encouraged by the positive feedback.",
+        "reflection_prompt": "What signs of progress are encouraging you?",
+        "growth_tip": "Notice and celebrate small wins to maintain encouragement.",
+        "body_signal": "Brightened expression, renewed energy, forward movement"
+      },
+      "Inspired": {
+        "intensity": 4,
+        "definition": "Feeling filled with creative energy and motivation.",
+        "synonyms": [
+          "Motivated",
+          "Stimulated",
+          "Energized"
+        ],
+        "example": "I felt inspired after hearing their story of perseverance.",
+        "reflection_prompt": "What recently sparked your creativity or motivation?",
+        "growth_tip": "Capture inspiration quickly—it's fleeting but powerful for creating change.",
+        "body_signal": "Alertness, ideas flowing, excitement"
+      },
+      "Motivated": {
+        "intensity": 4,
+        "definition": "Feeling driven and determined to achieve something.",
+        "synonyms": [
+          "Driven",
+          "Determined",
+          "Ambitious"
+        ],
+        "example": "I felt motivated to finally start the project I'd been planning.",
+        "reflection_prompt": "What is driving you forward right now?",
+        "growth_tip": "Connect motivation to deeper purpose to sustain it over time.",
+        "body_signal": "Forward energy, focus, determination"
+      }
+    },
+    "Playful": {
+      "Cheerful": {
+        "intensity": 3,
+        "definition": "Feeling noticeably happy and positive in mood.",
+        "synonyms": [
+          "Happy",
+          "Bright",
+          "Sunny"
+        ],
+        "example": "I felt cheerful waking up to beautiful weather.",
+        "reflection_prompt": "What simple pleasures bring you cheer?",
+        "growth_tip": "Cheerfulness is contagious and can be cultivated through gratitude.",
+        "body_signal": "Smiling, light step, bright eyes"
+      },
+      "Joyful": {
+        "intensity": 4,
+        "definition": "Feeling great happiness and delight.",
+        "synonyms": [
+          "Delighted",
+          "Happy",
+          "Gleeful"
+        ],
+        "example": "I felt joyful watching children play without a care.",
+        "reflection_prompt": "When do you experience pure, uncomplicated joy?",
+        "growth_tip": "Joy is often found in presence and simplicity.",
+        "body_signal": "Laughter, dancing energy, openness"
+      },
+      "Lighthearted": {
+        "intensity": 3,
+        "definition": "Feeling carefree and cheerful without worry.",
+        "synonyms": [
+          "Carefree",
+          "Breezy",
+          "Untroubled"
+        ],
+        "example": "I felt lighthearted spending time with old friends.",
+        "reflection_prompt": "What helps you let go of heaviness?",
+        "growth_tip": "Lightheartedness requires permission to not take everything seriously.",
+        "body_signal": "Ease, playfulness, spontaneous laughter"
+      },
+      "Amused": {
+        "intensity": 2,
+        "definition": "Finding something funny or entertaining.",
+        "synonyms": [
+          "Entertained",
+          "Tickled",
+          "Diverted"
+        ],
+        "example": "I felt amused by the clever joke.",
+        "reflection_prompt": "What makes you laugh?",
+        "growth_tip": "Amusement is a quick mood lifter. Seek out humor regularly.",
+        "body_signal": "Smiling, chuckling, relaxed face"
+      }
+    }
+  },
+  "Fearful": {
+    "Anxious": {
+      "Nervous": {
+        "intensity": 3,
+        "definition": "Feeling worried and slightly afraid about something uncertain.",
+        "synonyms": [
+          "Worried",
+          "Uneasy",
+          "Jittery"
+        ],
+        "example": "I felt nervous before the important presentation.",
+        "reflection_prompt": "What upcoming situation is making you feel uneasy?",
+        "growth_tip": "Preparation and deep breathing can reduce nervousness significantly.",
+        "body_signal": "Butterflies in stomach, fidgeting, rapid heartbeat"
+      },
+      "Overwhelmed": {
+        "intensity": 4,
+        "definition": "Feeling mentally overloaded and unable to cope with demands.",
+        "synonyms": [
+          "Stressed",
+          "Burdened",
+          "Pressured"
+        ],
+        "example": "I felt overwhelmed by the number of tasks due tomorrow.",
+        "reflection_prompt": "What feels too much right now?",
+        "growth_tip": "Break large problems into one small actionable step.",
+        "body_signal": "Rapid heartbeat, racing thoughts, tension"
+      },
+      "Restless": {
+        "intensity": 3,
+        "definition": "Unable to rest or relax due to anxiety or boredom.",
+        "synonyms": [
+          "Agitated",
+          "Unsettled",
+          "Fidgety"
+        ],
+        "example": "I felt restless waiting for the test results.",
+        "reflection_prompt": "What is preventing you from settling down?",
+        "growth_tip": "Physical movement or focused activity can channel restless energy.",
+        "body_signal": "Inability to sit still, pacing, tension"
+      },
+      "Uneasy": {
+        "intensity": 2,
+        "definition": "Feeling slightly anxious or uncomfortable about something.",
+        "synonyms": [
+          "Uncomfortable",
+          "Apprehensive",
+          "Troubled"
+        ],
+        "example": "I felt uneasy about the decision without having all the information.",
+        "reflection_prompt": "What is creating this subtle discomfort?",
+        "growth_tip": "Uneasiness is intuition signaling something needs attention.",
+        "body_signal": "Stomach discomfort, slight tension, wariness"
+      }
+    },
+    "Insecure": {
+      "Inferior": {
+        "intensity": 4,
+        "definition": "Feeling less worthy or capable than others.",
+        "synonyms": [
+          "Lesser",
+          "Inadequate",
+          "Second-rate"
+        ],
+        "example": "I felt inferior comparing myself to more experienced colleagues.",
+        "reflection_prompt": "Who are you comparing yourself to unfairly?",
+        "growth_tip": "Everyone has unique strengths. Comparison steals joy and distorts reality.",
+        "body_signal": "Shrinking, avoiding eye contact, self-doubt"
+      },
+      "Inadequate": {
+        "intensity": 4,
+        "definition": "Feeling not good enough or lacking necessary qualities.",
+        "synonyms": [
+          "Insufficient",
+          "Deficient",
+          "Lacking"
+        ],
+        "example": "I felt inadequate facing the complex challenge alone.",
+        "reflection_prompt": "What standard are you measuring yourself against?",
+        "growth_tip": "Inadequacy often reflects impossible standards, not actual inability.",
+        "body_signal": "Hunched shoulders, hesitation, withdrawal"
+      },
+      "Self-doubting": {
+        "intensity": 3,
+        "definition": "Questioning your own abilities or worth.",
+        "synonyms": [
+          "Uncertain",
+          "Hesitant",
+          "Questioning"
+        ],
+        "example": "I felt self-doubting about whether I could succeed.",
+        "reflection_prompt": "What are you doubting about yourself?",
+        "growth_tip": "Self-doubt needs evidence of capability. Take one small action.",
+        "body_signal": "Hesitation, second-guessing, seeking reassurance"
+      },
+      "Uncertain": {
+        "intensity": 2,
+        "definition": "Not sure about something or lacking confidence.",
+        "synonyms": [
+          "Doubtful",
+          "Unsure",
+          "Hesitant"
+        ],
+        "example": "I felt uncertain about which path to choose.",
+        "reflection_prompt": "What decision is causing you to feel stuck?",
+        "growth_tip": "Uncertainty is normal. Gather information and trust your process.",
+        "body_signal": "Indecision, wavering, confusion"
+      }
+    },
+    "Weak": {
+      "Fragile": {
+        "intensity": 4,
+        "definition": "Feeling delicate and easily hurt or broken.",
+        "synonyms": [
+          "Delicate",
+          "Vulnerable",
+          "Brittle"
+        ],
+        "example": "I felt fragile emotionally after the difficult week.",
+        "reflection_prompt": "What is making you feel particularly tender?",
+        "growth_tip": "Fragility requires gentle care and protected recovery time.",
+        "body_signal": "Shakiness, tears close to surface, softness"
+      },
+      "Vulnerable": {
+        "intensity": 4,
+        "definition": "Feeling exposed and susceptible to being hurt.",
+        "synonyms": [
+          "Exposed",
+          "Defenseless",
+          "Open"
+        ],
+        "example": "I felt vulnerable sharing my deepest fears.",
+        "reflection_prompt": "Where do you feel most exposed right now?",
+        "growth_tip": "Vulnerability is the birthplace of connection and courage.",
+        "body_signal": "Open posture, trembling, emotional exposure"
+      },
+      "Exposed": {
+        "intensity": 4,
+        "definition": "Feeling unprotected and open to judgment or harm.",
+        "synonyms": [
+          "Unguarded",
+          "Revealed",
+          "Bare"
+        ],
+        "example": "I felt exposed when my private information became public.",
+        "reflection_prompt": "What do you feel was revealed that you wanted hidden?",
+        "growth_tip": "Exposure anxiety often exceeds actual danger. Reality is usually kinder than fear.",
+        "body_signal": "Protective gestures, covering up, hiding"
+      },
+      "Dependent": {
+        "intensity": 3,
+        "definition": "Relying on others for support, unable to manage alone.",
+        "synonyms": [
+          "Reliant",
+          "Needing",
+          "Helpless"
+        ],
+        "example": "I felt dependent and uncomfortable needing so much help.",
+        "reflection_prompt": "What are you needing from others that feels uncomfortable?",
+        "growth_tip": "Healthy interdependence is human. We all need others sometimes.",
+        "body_signal": "Reaching out, clinging, seeking support"
+      }
+    },
+    "Scared": {
+      "Terrified": {
+        "intensity": 5,
+        "definition": "Feeling extremely frightened and unable to think clearly.",
+        "synonyms": [
+          "Horrified",
+          "Petrified",
+          "Panic-stricken"
+        ],
+        "example": "I felt terrified during the emergency situation.",
+        "reflection_prompt": "What is your worst fear right now?",
+        "growth_tip": "Terror activates survival responses. Focus on immediate safety first.",
+        "body_signal": "Frozen or fleeing, rapid breathing, wide eyes"
+      },
+      "Panicked": {
+        "intensity": 5,
+        "definition": "Feeling sudden overwhelming fear causing loss of control.",
+        "synonyms": [
+          "Frantic",
+          "Hysterical",
+          "Frenzied"
+        ],
+        "example": "I felt panicked when I couldn't find my child in the crowd.",
+        "reflection_prompt": "What triggered this intense fear response?",
+        "growth_tip": "Panic passes. Ground yourself with breath and present-moment awareness.",
+        "body_signal": "Racing heart, hyperventilation, tunnel vision"
+      },
+      "Startled": {
+        "intensity": 3,
+        "definition": "Feeling suddenly alarmed or surprised by something unexpected.",
+        "synonyms": [
+          "Shocked",
+          "Jolted",
+          "Surprised"
+        ],
+        "example": "I felt startled by the loud noise behind me.",
+        "reflection_prompt": "What caught you off guard?",
+        "growth_tip": "Startle responses are automatic. Recovery comes through recognizing safety.",
+        "body_signal": "Jumping, gasping, rapid alertness"
+      },
+      "Alarmed": {
+        "intensity": 4,
+        "definition": "Feeling suddenly afraid due to perceived danger.",
+        "synonyms": [
+          "Disturbed",
+          "Concerned",
+          "Troubled"
+        ],
+        "example": "I felt alarmed by the warning signs.",
+        "reflection_prompt": "What danger signal are you picking up on?",
+        "growth_tip": "Alarm is protective. Assess the actual threat level before reacting.",
+        "body_signal": "Alert posture, wide eyes, readiness to act"
+      }
+    },
+    "Threatened": {
+      "Pressured": {
+        "intensity": 3,
+        "definition": "Feeling forced or pushed to do something against your will.",
+        "synonyms": [
+          "Coerced",
+          "Pushed",
+          "Compelled"
+        ],
+        "example": "I felt pressured to make a decision before I was ready.",
+        "reflection_prompt": "Where are you feeling forced or rushed?",
+        "growth_tip": "You have the right to set your own pace and boundaries.",
+        "body_signal": "Tightness, resistance, desire to escape"
+      },
+      "Cornered": {
+        "intensity": 4,
+        "definition": "Feeling trapped with no good options or escape.",
+        "synonyms": [
+          "Trapped",
+          "Stuck",
+          "Caught"
+        ],
+        "example": "I felt cornered in the difficult conversation with no way out.",
+        "reflection_prompt": "What situation feels like it has you trapped?",
+        "growth_tip": "When cornered, pause. There are usually more options than fear allows us to see.",
+        "body_signal": "Defensive posture, looking for exits, tension"
+      },
+      "Intimidated": {
+        "intensity": 3,
+        "definition": "Feeling frightened or made timid by someone's power or authority.",
+        "synonyms": [
+          "Daunted",
+          "Overawed",
+          "Cowed"
+        ],
+        "example": "I felt intimidated by their aggressive manner.",
+        "reflection_prompt": "Who or what is making you feel small or powerless?",
+        "growth_tip": "Your worth isn't diminished by another's power. Stand in your dignity.",
+        "body_signal": "Shrinking, avoiding confrontation, submission"
+      },
+      "Unsafe": {
+        "intensity": 4,
+        "definition": "Feeling at risk of harm or danger.",
+        "synonyms": [
+          "Endangered",
+          "Insecure",
+          "At risk"
+        ],
+        "example": "I felt unsafe walking alone in the dark area.",
+        "reflection_prompt": "What is threatening your sense of security?",
+        "growth_tip": "Trust your instincts about safety and take protective action.",
+        "body_signal": "Hyper-vigilance, scanning environment, tension"
+      }
+    },
+    "Rejected": {
+      "Unwanted": {
+        "intensity": 4,
+        "definition": "Feeling not desired or valued by others.",
+        "synonyms": [
+          "Undesired",
+          "Spurned",
+          "Cast aside"
+        ],
+        "example": "I felt unwanted when no one chose me for their team.",
+        "reflection_prompt": "Where do you feel like you don't belong?",
+        "growth_tip": "Being unwanted in one context doesn't define your worth. Find your people.",
+        "body_signal": "Withdrawal, sadness, hiding"
+      },
+      "Dismissed": {
+        "intensity": 3,
+        "definition": "Feeling treated as unimportant or invalid.",
+        "synonyms": [
+          "Disregarded",
+          "Ignored",
+          "Brushed off"
+        ],
+        "example": "I felt dismissed when they interrupted and changed the subject.",
+        "reflection_prompt": "When have you felt your voice didn't matter?",
+        "growth_tip": "Being dismissed is about the other's limitations, not your value.",
+        "body_signal": "Deflation, silencing self, frustration"
+      },
+      "Ignored": {
+        "intensity": 3,
+        "definition": "Being deliberately not noticed or acknowledged.",
+        "synonyms": [
+          "Overlooked",
+          "Disregarded",
+          "Unseen"
+        ],
+        "example": "I felt ignored when they walked past without acknowledgment.",
+        "reflection_prompt": "Where do you feel invisible?",
+        "growth_tip": "Being ignored hurts, but you don't need others' attention to matter.",
+        "body_signal": "Sinking feeling, trying harder, then giving up"
+      },
+      "Excluded": {
+        "intensity": 3,
+        "definition": "Being deliberately left out of a group or activity.",
+        "synonyms": [
+          "Left out",
+          "Shut out",
+          "Ostracized"
+        ],
+        "example": "I felt excluded when they made plans without including me.",
+        "reflection_prompt": "What group or situation are you being kept out of?",
+        "growth_tip": "Exclusion reveals who your true community is. Invest energy there.",
+        "body_signal": "Loneliness, watching from outside, sadness"
+      }
+    }
+  },
+  "Disgusted": {
+    "Disapproving": {
+      "Judgmental": {
+        "intensity": 3,
+        "definition": "Critically evaluating others or situations negatively.",
+        "synonyms": [
+          "Critical",
+          "Condemning",
+          "Censorious"
+        ],
+        "example": "I felt judgmental about their choices without understanding their situation.",
+        "reflection_prompt": "What are you harshly criticizing in others or yourself?",
+        "growth_tip": "Judgment often masks our own insecurities. Curiosity is more productive.",
+        "body_signal": "Narrowed eyes, tight lips, critical gaze"
+      },
+      "Critical": {
+        "intensity": 3,
+        "definition": "Finding fault and expressing disapproval.",
+        "synonyms": [
+          "Fault-finding",
+          "Disparaging",
+          "Censorious"
+        ],
+        "example": "I felt critical of every small mistake in the presentation.",
+        "reflection_prompt": "What standards are you imposing that may be too harsh?",
+        "growth_tip": "Balanced critique includes both strengths and areas for growth.",
+        "body_signal": "Frowning, shaking head, pointing out flaws"
+      },
+      "Appalled": {
+        "intensity": 4,
+        "definition": "Feeling shocked and horrified by something terrible.",
+        "synonyms": [
+          "Horrified",
+          "Shocked",
+          "Dismayed"
+        ],
+        "example": "I felt appalled by the unethical behavior I witnessed.",
+        "reflection_prompt": "What violated your values or sense of right?",
+        "growth_tip": "Being appalled can motivate ethical action and boundary-setting.",
+        "body_signal": "Recoiling, hand to mouth, widened eyes"
+      },
+      "Displeased": {
+        "intensity": 2,
+        "definition": "Feeling annoyed or dissatisfied with something.",
+        "synonyms": [
+          "Unsatisfied",
+          "Annoyed",
+          "Unhappy"
+        ],
+        "example": "I felt displeased with the subpar service.",
+        "reflection_prompt": "What failed to meet your expectations?",
+        "growth_tip": "Displeasure is feedback. Communicate it constructively when possible.",
+        "body_signal": "Frown, crossed arms, terseness"
+      }
+    },
+    "Disappointed": {
+      "Let down": {
+        "intensity": 3,
+        "definition": "Feeling failed by someone or something that didn't meet expectations.",
+        "synonyms": [
+          "Failed",
+          "Betrayed",
+          "Disappointed"
+        ],
+        "example": "I felt let down when the promised support didn't materialize.",
+        "reflection_prompt": "What hope or expectation went unfulfilled?",
+        "growth_tip": "Disappointment clarifies what we truly needed or wanted.",
+        "body_signal": "Sinking feeling, sighing, sadness"
+      },
+      "Dismayed": {
+        "intensity": 3,
+        "definition": "Feeling distressed and disappointed by something unexpected.",
+        "synonyms": [
+          "Distressed",
+          "Discouraged",
+          "Disheartened"
+        ],
+        "example": "I felt dismayed discovering the project had been cancelled.",
+        "reflection_prompt": "What unwelcome surprise disrupted your plans?",
+        "growth_tip": "Dismay fades as you adapt to new circumstances.",
+        "body_signal": "Shock, deflation, disappointment"
+      },
+      "Disillusioned": {
+        "intensity": 4,
+        "definition": "Losing faith or trust due to disappointment with reality.",
+        "synonyms": [
+          "Disenchanted",
+          "Cynical",
+          "Jaded"
+        ],
+        "example": "I felt disillusioned after seeing the corruption firsthand.",
+        "reflection_prompt": "What belief or ideal has been shattered?",
+        "growth_tip": "Disillusionment is painful but can lead to more authentic understanding.",
+        "body_signal": "Cynical expression, loss of hope, bitterness"
+      },
+      "Disheartened": {
+        "intensity": 3,
+        "definition": "Losing courage or confidence due to difficulty.",
+        "synonyms": [
+          "Discouraged",
+          "Demoralized",
+          "Dispirited"
+        ],
+        "example": "I felt disheartened by the repeated setbacks.",
+        "reflection_prompt": "What has made you lose heart?",
+        "growth_tip": "Small wins can restore heart and hope.",
+        "body_signal": "Slumped posture, loss of energy, sadness"
+      }
+    },
+    "Awful": {
+      "Nauseated": {
+        "intensity": 4,
+        "definition": "Feeling physically sick to the stomach, often from disgust.",
+        "synonyms": [
+          "Sick",
+          "Queasy",
+          "Sickened"
+        ],
+        "example": "I felt nauseated by the graphic images.",
+        "reflection_prompt": "What is making you feel physically revolted?",
+        "growth_tip": "Nausea signals something deeply offensive. Remove yourself from the source.",
+        "body_signal": "Stomach churning, gagging, paleness"
+      },
+      "Repulsed": {
+        "intensity": 4,
+        "definition": "Feeling intense disgust and desire to get away from something.",
+        "synonyms": [
+          "Revolted",
+          "Disgusted",
+          "Sickened"
+        ],
+        "example": "I felt repulsed by the cruel treatment I witnessed.",
+        "reflection_prompt": "What is triggering this intense disgust?",
+        "growth_tip": "Repulsion protects us from harmful or toxic situations.",
+        "body_signal": "Turning away, grimacing, distancing"
+      },
+      "Horrified": {
+        "intensity": 5,
+        "definition": "Feeling shocked and disgusted by something terrible.",
+        "synonyms": [
+          "Shocked",
+          "Appalled",
+          "Terrified"
+        ],
+        "example": "I felt horrified by the news of the tragedy.",
+        "reflection_prompt": "What terrible thing has shocked your system?",
+        "growth_tip": "Horror requires time to process and often support from others.",
+        "body_signal": "Frozen, gasping, covering eyes"
+      },
+      "Sickened": {
+        "intensity": 4,
+        "definition": "Made to feel disgust or revulsion.",
+        "synonyms": [
+          "Disgusted",
+          "Nauseated",
+          "Revolted"
+        ],
+        "example": "I felt sickened by the unethical behavior.",
+        "reflection_prompt": "What behavior or situation makes you feel ill?",
+        "growth_tip": "Being sickened signals a deep values violation.",
+        "body_signal": "Nausea, recoiling, distress"
+      }
+    },
+    "Avoidant": {
+      "Withdrawn": {
+        "intensity": 3,
+        "definition": "Pulling back from engagement or connection.",
+        "synonyms": [
+          "Detached",
+          "Removed",
+          "Retreating"
+        ],
+        "example": "I felt withdrawn after the unpleasant interaction.",
+        "reflection_prompt": "What are you pulling away from?",
+        "growth_tip": "Temporary withdrawal for recovery is healthy; permanent avoidance isn't.",
+        "body_signal": "Turning away, creating distance, silence"
+      },
+      "Resistant": {
+        "intensity": 3,
+        "definition": "Opposing or refusing to accept something.",
+        "synonyms": [
+          "Opposing",
+          "Defiant",
+          "Unwilling"
+        ],
+        "example": "I felt resistant to the change being imposed.",
+        "reflection_prompt": "What are you resisting, and why?",
+        "growth_tip": "Resistance often signals misalignment with values or needs.",
+        "body_signal": "Pushing back, saying no, stiffness"
+      },
+      "Detached": {
+        "intensity": 3,
+        "definition": "Emotionally disconnected and uninvolved.",
+        "synonyms": [
+          "Disconnected",
+          "Aloof",
+          "Disengaged"
+        ],
+        "example": "I felt detached from the situation, observing rather than participating.",
+        "reflection_prompt": "What are you disconnecting from emotionally?",
+        "growth_tip": "Detachment can be protective but prevents genuine connection.",
+        "body_signal": "Emotional flatness, distance, observation"
+      },
+      "Uncomfortable": {
+        "intensity": 2,
+        "definition": "Feeling uneasy or awkward in a situation.",
+        "synonyms": [
+          "Uneasy",
+          "Awkward",
+          "Ill at ease"
+        ],
+        "example": "I felt uncomfortable in the tense atmosphere.",
+        "reflection_prompt": "What is making you feel ill at ease?",
+        "growth_tip": "Discomfort is information about misalignment or unfamiliarity.",
+        "body_signal": "Fidgeting, avoiding eye contact, tension"
+      }
+    },
+    "Embarrassed": {
+      "Ashamed": {
+        "intensity": 4,
+        "definition": "Feeling deep embarrassment or disgrace about oneself.",
+        "synonyms": [
+          "Mortified",
+          "Disgraced",
+          "Humiliated"
+        ],
+        "example": "I felt ashamed of my past mistakes.",
+        "reflection_prompt": "What are you ashamed of?",
+        "growth_tip": "Shame thrives in secrecy. Speaking it reduces its power.",
+        "body_signal": "Hiding face, curling inward, avoiding eyes"
+      },
+      "Mortified": {
+        "intensity": 5,
+        "definition": "Extremely embarrassed or humiliated.",
+        "synonyms": [
+          "Humiliated",
+          "Horrified",
+          "Appalled"
+        ],
+        "example": "I felt mortified when my mistake was announced publicly.",
+        "reflection_prompt": "What caused you extreme embarrassment?",
+        "growth_tip": "Mortification is temporary and intense. Self-compassion aids recovery.",
+        "body_signal": "Flushed face, wanting to disappear, frozen"
+      },
+      "Self-conscious": {
+        "intensity": 3,
+        "definition": "Overly aware of oneself and how others perceive you.",
+        "synonyms": [
+          "Awkward",
+          "Uncomfortable",
+          "Uneasy"
+        ],
+        "example": "I felt self-conscious giving the presentation.",
+        "reflection_prompt": "What are you worried others are judging?",
+        "growth_tip": "Others are usually less focused on you than you imagine.",
+        "body_signal": "Awkwardness, adjusting appearance, watching reactions"
+      },
+      "Humiliated": {
+        "intensity": 5,
+        "definition": "Made to feel foolish or ashamed in front of others.",
+        "synonyms": [
+          "Degraded",
+          "Mortified",
+          "Shamed"
+        ],
+        "example": "I felt humiliated when they mocked me publicly.",
+        "reflection_prompt": "How were you made to feel small or foolish?",
+        "growth_tip": "Humiliation is about the other's cruelty, not your worth.",
+        "body_signal": "Burning face, tears, wanting to hide"
+      }
+    },
+    "Judgmental": {
+      "Contemptuous": {
+        "intensity": 4,
+        "definition": "Feeling scorn and disrespect toward someone or something.",
+        "synonyms": [
+          "Scornful",
+          "Disdainful",
+          "Sneering"
+        ],
+        "example": "I felt contemptuous of their obvious lies.",
+        "reflection_prompt": "Who or what do you hold in contempt?",
+        "growth_tip": "Contempt is toxic. It destroys relationships and empathy.",
+        "body_signal": "Sneering, looking down, dismissive gestures"
+      },
+      "Disdainful": {
+        "intensity": 4,
+        "definition": "Showing contempt or lack of respect.",
+        "synonyms": [
+          "Scornful",
+          "Contemptuous",
+          "Derisive"
+        ],
+        "example": "I felt disdainful of their shallow concerns.",
+        "reflection_prompt": "What are you treating with contempt or dismissal?",
+        "growth_tip": "Disdain often masks our own insecurities or fears.",
+        "body_signal": "Raised chin, smirking, turning away"
+      },
+      "Disrespectful": {
+        "intensity": 3,
+        "definition": "Showing lack of respect or courtesy.",
+        "synonyms": [
+          "Rude",
+          "Impolite",
+          "Inconsiderate"
+        ],
+        "example": "I felt disrespectful during the heated argument.",
+        "reflection_prompt": "How are you failing to honor others' dignity?",
+        "growth_tip": "Respect can be maintained even in disagreement.",
+        "body_signal": "Interrupting, dismissive tone, eye rolling"
+      },
+      "Dismissive": {
+        "intensity": 3,
+        "definition": "Treating something as unworthy of consideration.",
+        "synonyms": [
+          "Contemptuous",
+          "Disregarding",
+          "Condescending"
+        ],
+        "example": "I felt dismissive of their concerns without really listening.",
+        "reflection_prompt": "What are you refusing to take seriously?",
+        "growth_tip": "Dismissiveness shuts down dialogue and understanding.",
+        "body_signal": "Waving off, not listening, condescension"
+      }
+    }
+  },
+  "Surprised": {
+    "Amazed": {
+      "Astonished": {
+        "intensity": 4,
+        "definition": "Feeling greatly surprised or impressed.",
+        "synonyms": [
+          "Astounded",
+          "Stunned",
+          "Amazed"
+        ],
+        "example": "I felt astonished by the incredible performance.",
+        "reflection_prompt": "What recently took your breath away?",
+        "growth_tip": "Astonishment opens us to wonder and new possibilities.",
+        "body_signal": "Wide eyes, mouth open, stillness"
+      },
+      "Impressed": {
+        "intensity": 3,
+        "definition": "Feeling admiration and respect for something remarkable.",
+        "synonyms": [
+          "Admiring",
+          "Awed",
+          "Struck"
+        ],
+        "example": "I felt impressed by their skill and dedication.",
+        "reflection_prompt": "What quality or achievement impressed you?",
+        "growth_tip": "Being impressed can inspire your own growth and effort.",
+        "body_signal": "Raised eyebrows, attentive gaze, appreciation"
+      },
+      "Awestruck": {
+        "intensity": 5,
+        "definition": "Filled with overwhelming wonder or admiration.",
+        "synonyms": [
+          "Amazed",
+          "Wonder-filled",
+          "Overwhelmed"
+        ],
+        "example": "I felt awestruck standing before the ancient monument.",
+        "reflection_prompt": "What fills you with wonder and awe?",
+        "growth_tip": "Awe connects us to something larger than ourselves.",
+        "body_signal": "Open-mouthed wonder, tears, reverence"
+      },
+      "Stunned": {
+        "intensity": 4,
+        "definition": "Shocked into temporary inability to react.",
+        "synonyms": [
+          "Shocked",
+          "Dazed",
+          "Stupefied"
+        ],
+        "example": "I felt stunned by the unexpected announcement.",
+        "reflection_prompt": "What news left you temporarily speechless?",
+        "growth_tip": "Being stunned requires time to process and integrate.",
+        "body_signal": "Frozen, silence, blank stare"
+      }
+    },
+    "Confused": {
+      "Perplexed": {
+        "intensity": 3,
+        "definition": "Completely puzzled and unable to understand.",
+        "synonyms": [
+          "Bewildered",
+          "Baffled",
+          "Mystified"
+        ],
+        "example": "I felt perplexed by the contradictory instructions.",
+        "reflection_prompt": "What situation has you completely puzzled?",
+        "growth_tip": "Perplexity invites questions and deeper exploration.",
+        "body_signal": "Furrowed brow, head tilting, questioning look"
+      },
+      "Disoriented": {
+        "intensity": 4,
+        "definition": "Confused about where you are or what's happening.",
+        "synonyms": [
+          "Confused",
+          "Lost",
+          "Bewildered"
+        ],
+        "example": "I felt disoriented after waking in the unfamiliar room.",
+        "reflection_prompt": "What has made you lose your bearings?",
+        "growth_tip": "Disorientation requires grounding and reestablishing reference points.",
+        "body_signal": "Spinning sensation, looking around, unsteady"
+      },
+      "Uncertain": {
+        "intensity": 2,
+        "definition": "Not sure or confident about something.",
+        "synonyms": [
+          "Unsure",
+          "Doubtful",
+          "Hesitant"
+        ],
+        "example": "I felt uncertain about which direction to take.",
+        "reflection_prompt": "What decision or situation has you feeling unsure?",
+        "growth_tip": "Uncertainty is normal. Gather information and trust your process.",
+        "body_signal": "Hesitation, wavering, seeking input"
+      },
+      "Lost": {
+        "intensity": 4,
+        "definition": "Unable to find your way or understand your situation.",
+        "synonyms": [
+          "Confused",
+          "Adrift",
+          "Disoriented"
+        ],
+        "example": "I felt lost trying to navigate the complex system.",
+        "reflection_prompt": "Where do you feel you've lost your way?",
+        "growth_tip": "Being lost is temporary. Ask for help or retrace your steps.",
+        "body_signal": "Searching, anxiety, helplessness"
+      }
+    },
+    "Excited": {
+      "Eager": {
+        "intensity": 3,
+        "definition": "Enthusiastic and keen to do something.",
+        "synonyms": [
+          "Keen",
+          "Enthusiastic",
+          "Anxious (positive)"
+        ],
+        "example": "I felt eager to begin the new project.",
+        "reflection_prompt": "What are you looking forward to with enthusiasm?",
+        "growth_tip": "Channel eagerness into preparation and action.",
+        "body_signal": "Forward lean, bright eyes, readiness"
+      },
+      "Thrilled": {
+        "intensity": 4,
+        "definition": "Extremely excited and delighted.",
+        "synonyms": [
+          "Exhilarated",
+          "Ecstatic",
+          "Overjoyed"
+        ],
+        "example": "I felt thrilled receiving the amazing opportunity.",
+        "reflection_prompt": "What recently made you feel electric with excitement?",
+        "growth_tip": "Savor thrilling moments—they energize and motivate.",
+        "body_signal": "Racing heart, smiling, bouncing energy"
+      },
+      "Anticipatory": {
+        "intensity": 3,
+        "definition": "Looking forward to something with excitement.",
+        "synonyms": [
+          "Expectant",
+          "Hopeful",
+          "Waiting eagerly"
+        ],
+        "example": "I felt anticipatory waiting for the results.",
+        "reflection_prompt": "What are you eagerly anticipating?",
+        "growth_tip": "Anticipation can be as enjoyable as the event itself.",
+        "body_signal": "Restless energy, counting down, imagining"
+      },
+      "Energetic": {
+        "intensity": 3,
+        "definition": "Full of energy and enthusiasm.",
+        "synonyms": [
+          "Lively",
+          "Vigorous",
+          "Dynamic"
+        ],
+        "example": "I felt energetic and ready to tackle challenges.",
+        "reflection_prompt": "What gives you this surge of energy?",
+        "growth_tip": "Harness energetic moments for productive action.",
+        "body_signal": "Quick movements, alertness, vitality"
+      }
+    },
+    "Startled": {
+      "Shocked": {
+        "intensity": 4,
+        "definition": "Suddenly surprised and disturbed by something unexpected.",
+        "synonyms": [
+          "Stunned",
+          "Jolted",
+          "Shaken"
+        ],
+        "example": "I felt shocked by the sudden news.",
+        "reflection_prompt": "What unexpected event caught you completely off guard?",
+        "growth_tip": "Shock requires time to process before responding.",
+        "body_signal": "Wide eyes, gasping, frozen moment"
+      },
+      "Alarmed": {
+        "intensity": 4,
+        "definition": "Suddenly frightened or disturbed.",
+        "synonyms": [
+          "Frightened",
+          "Concerned",
+          "Worried"
+        ],
+        "example": "I felt alarmed by the warning signs.",
+        "reflection_prompt": "What danger signal are you responding to?",
+        "growth_tip": "Alarm is protective. Assess the threat before reacting.",
+        "body_signal": "Alert tension, wide eyes, readiness"
+      },
+      "Sudden": {
+        "intensity": 3,
+        "definition": "Happening quickly and unexpectedly.",
+        "synonyms": [
+          "Abrupt",
+          "Unexpected",
+          "Swift"
+        ],
+        "example": "I felt the sudden realization hit me.",
+        "reflection_prompt": "What came upon you without warning?",
+        "growth_tip": "Sudden changes require quick adaptation.",
+        "body_signal": "Jolt, quick intake of breath, alertness"
+      },
+      "Jolted": {
+        "intensity": 3,
+        "definition": "Shocked or surprised into sudden action.",
+        "synonyms": [
+          "Startled",
+          "Shocked",
+          "Jarred"
+        ],
+        "example": "I felt jolted awake by the loud noise.",
+        "reflection_prompt": "What shook you out of your current state?",
+        "growth_tip": "Being jolted can be the wake-up call needed for change.",
+        "body_signal": "Physical jump, rapid alertness, disruption"
+      }
+    },
+    "Curious": {
+      "Interested": {
+        "intensity": 2,
+        "definition": "Wanting to know or learn about something.",
+        "synonyms": [
+          "Engaged",
+          "Attentive",
+          "Curious"
+        ],
+        "example": "I felt interested in learning more about the topic.",
+        "reflection_prompt": "What has captured your attention?",
+        "growth_tip": "Interest is the beginning of learning and growth.",
+        "body_signal": "Leaning in, focused attention, questions"
+      },
+      "Intrigued": {
+        "intensity": 3,
+        "definition": "Fascinated and curious to know more.",
+        "synonyms": [
+          "Fascinated",
+          "Captivated",
+          "Drawn in"
+        ],
+        "example": "I felt intrigued by the mysterious story.",
+        "reflection_prompt": "What mystery or puzzle is drawing you in?",
+        "growth_tip": "Intrigue motivates exploration and discovery.",
+        "body_signal": "Raised eyebrows, forward lean, engagement"
+      },
+      "Inquisitive": {
+        "intensity": 3,
+        "definition": "Eager to learn and ask questions.",
+        "synonyms": [
+          "Questioning",
+          "Inquiring",
+          "Probing"
+        ],
+        "example": "I felt inquisitive about how things worked.",
+        "reflection_prompt": "What questions are you eager to explore?",
+        "growth_tip": "Inquisitiveness is the engine of learning and innovation.",
+        "body_signal": "Asking questions, exploring, investigating"
+      },
+      "Exploratory": {
+        "intensity": 3,
+        "definition": "Seeking to discover through investigation.",
+        "synonyms": [
+          "Investigating",
+          "Probing",
+          "Searching"
+        ],
+        "example": "I felt exploratory, wanting to test different approaches.",
+        "reflection_prompt": "What are you investigating or trying to understand?",
+        "growth_tip": "Exploration requires openness to what you might discover.",
+        "body_signal": "Searching movements, testing, trying"
+      }
+    },
+    "Overwhelmed": {
+      "Astonished": {
+        "intensity": 4,
+        "definition": "Greatly surprised or amazed.",
+        "synonyms": [
+          "Amazed",
+          "Astounded",
+          "Stunned"
+        ],
+        "example": "I felt astonished by the incredible achievement.",
+        "reflection_prompt": "What exceeded your expectations dramatically?",
+        "growth_tip": "Astonishment expands our sense of what's possible.",
+        "body_signal": "Wide eyes, open mouth, pause"
+      },
+      "Speechless": {
+        "intensity": 4,
+        "definition": "Unable to speak due to shock or emotion.",
+        "synonyms": [
+          "Wordless",
+          "Dumbstruck",
+          "Silent"
+        ],
+        "example": "I felt speechless at the unexpected gesture.",
+        "reflection_prompt": "What left you without words?",
+        "growth_tip": "Speechlessness signals experiences beyond our usual capacity.",
+        "body_signal": "Silence, inability to speak, stillness"
+      },
+      "Staggered": {
+        "intensity": 4,
+        "definition": "Shocked or overwhelmed to the point of being unsteady.",
+        "synonyms": [
+          "Shocked",
+          "Overwhelmed",
+          "Reeling"
+        ],
+        "example": "I felt staggered by the magnitude of the revelation.",
+        "reflection_prompt": "What news or realization hit you with overwhelming force?",
+        "growth_tip": "When staggered, stabilize yourself before processing further.",
+        "body_signal": "Physical unsteadiness, need for support, disorientation"
+      },
+      "Taken aback": {
+        "intensity": 3,
+        "definition": "Surprised and somewhat shocked by something unexpected.",
+        "synonyms": [
+          "Surprised",
+          "Startled",
+          "Caught off guard"
+        ],
+        "example": "I felt taken aback by their harsh response.",
+        "reflection_prompt": "What unexpected response or event surprised you?",
+        "growth_tip": "Being taken aback requires a moment to recalibrate expectations.",
+        "body_signal": "Step back, widened eyes, pause"
+      }
+    }
+  }
+}

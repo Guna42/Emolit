@@ -1,0 +1,235 @@
+{
+  "Angry": {
+    "Mad": [
+      "Humiliated",
+      "Let Down",
+      "Betrayed",
+      "Disrespected"
+    ],
+    "Frustrated": [
+      "Annoyed",
+      "Irritated",
+      "Exasperated",
+      "Agitated"
+    ],
+    "Bitter": [
+      "Resentful",
+      "Indignant",
+      "Violated",
+      "Jealous"
+    ],
+    "Critical": [
+      "Judgmental",
+      "Skeptical",
+      "Dismissive",
+      "Contemptuous"
+    ],
+    "Aggressive": [
+      "Hostile",
+      "Provoked",
+      "Furious",
+      "Rageful"
+    ],
+    "Distant": [
+      "Withdrawn",
+      "Apathetic",
+      "Cold",
+      "Numb"
+    ]
+  },
+
+  "Sad": {
+    "Hurt": [
+      "Embarrassed",
+      "Disappointed",
+      "Rejected",
+      "Betrayed"
+    ],
+    "Lonely": [
+      "Isolated",
+      "Abandoned",
+      "Excluded",
+      "Disconnected"
+    ],
+    "Vulnerable": [
+      "Fragile",
+      "Insecure",
+      "Helpless",
+      "Powerless"
+    ],
+    "Despairing": [
+      "Hopeless",
+      "Grief-Stricken",
+      "Depressed",
+      "Empty"
+    ],
+    "Guilty": [
+      "Ashamed",
+      "Remorseful",
+      "Regretful",
+      "Self-Blaming"
+    ],
+    "Disappointed": [
+      "Discouraged",
+      "Dismayed",
+      "Let Down",
+      "Unfulfilled"
+    ]
+  },
+
+  "Happy": {
+    "Content": [
+      "Satisfied",
+      "At Ease",
+      "Peaceful",
+      "Relaxed"
+    ],
+    "Proud": [
+      "Confident",
+      "Accomplished",
+      "Fulfilled",
+      "Successful"
+    ],
+    "Excited": [
+      "Eager",
+      "Energetic",
+      "Thrilled",
+      "Elated"
+    ],
+    "Grateful": [
+      "Appreciative",
+      "Thankful",
+      "Blessed",
+      "Moved"
+    ],
+    "Optimistic": [
+      "Hopeful",
+      "Encouraged",
+      "Inspired",
+      "Motivated"
+    ],
+    "Playful": [
+      "Cheerful",
+      "Joyful",
+      "Lighthearted",
+      "Amused"
+    ]
+  },
+
+  "Fearful": {
+    "Anxious": [
+      "Nervous",
+      "Overwhelmed",
+      "Restless",
+      "Uneasy"
+    ],
+    "Insecure": [
+      "Inferior",
+      "Inadequate",
+      "Self-Doubting",
+      "Uncertain"
+    ],
+    "Weak": [
+      "Fragile",
+      "Vulnerable",
+      "Exposed",
+      "Dependent"
+    ],
+    "Scared": [
+      "Terrified",
+      "Panicked",
+      "Startled",
+      "Alarmed"
+    ],
+    "Threatened": [
+      "Pressured",
+      "Cornered",
+      "Intimidated",
+      "Unsafe"
+    ],
+    "Rejected": [
+      "Unwanted",
+      "Dismissed",
+      "Ignored",
+      "Excluded"
+    ]
+  },
+
+  "Disgusted": {
+    "Disapproving": [
+      "Judgmental",
+      "Critical",
+      "Appalled",
+      "Displeased"
+    ],
+    "Disappointed": [
+      "Let Down",
+      "Dismayed",
+      "Disillusioned",
+      "Disheartened"
+    ],
+    "Awful": [
+      "Nauseated",
+      "Repulsed",
+      "Horrified",
+      "Sickened"
+    ],
+    "Avoidant": [
+      "Withdrawn",
+      "Resistant",
+      "Detached",
+      "Uncomfortable"
+    ],
+    "Embarrassed": [
+      "Ashamed",
+      "Mortified",
+      "Self-Conscious",
+      "Humiliated"
+    ],
+    "Judgmental": [
+      "Contemptuous",
+      "Disdainful",
+      "Disrespectful",
+      "Dismissive"
+    ]
+  },
+
+  "Surprised": {
+    "Amazed": [
+      "Astonished",
+      "Impressed",
+      "Awestruck",
+      "Stunned"
+    ],
+    "Confused": [
+      "Perplexed",
+      "Disoriented",
+      "Uncertain",
+      "Lost"
+    ],
+    "Excited": [
+      "Eager",
+      "Thrilled",
+      "Anticipatory",
+      "Energetic"
+    ],
+    "Startled": [
+      "Shocked",
+      "Alarmed",
+      "Sudden",
+      "Jolted"
+    ],
+    "Curious": [
+      "Interested",
+      "Intrigued",
+      "Inquisitive",
+      "Exploratory"
+    ],
+    "Overwhelmed": [
+      "Astonished",
+      "Speechless",
+      "Staggered",
+      "Taken Aback"
+    ]
+  }
+}
