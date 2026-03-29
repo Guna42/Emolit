@@ -1,6 +1,11 @@
 import axios from 'axios';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
+import { Capacitor } from '@capacitor/core';
 
-const API_BASE_URL = 'https://emolit-api.onrender.com';
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+  ? 'http://localhost:8000' 
+  : 'https://emolit-api.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -54,20 +59,24 @@ export interface DetectedEmotion {
 
 export interface JournalResponse {
   detected_emotions: DetectedEmotion[];
-  emotional_observation: string;
-  pattern_insight: string;
-  reflection_question: string;
-  regulation_suggestion: string;
+  recognize: string;
+  understand: string;
+  label: string;
+  express: string;
+  regulate: string;
+  growth_action: string;
 }
 
 export interface JournalEntry {
   entry_id: string;
   entry_text: string;
   detected_emotions: DetectedEmotion[];
-  emotional_observation: string;
-  pattern_insight: string;
-  reflection_question: string;
-  regulation_suggestion: string;
+  recognize: string;
+  understand: string;
+  label: string;
+  express: string;
+  regulate: string;
+  growth_action: string;
   created_at: string;
 }
 
@@ -212,18 +221,49 @@ export const emotionAPI = {
   },
 
   exportReport: async (): Promise<void> => {
-    const token = localStorage.getItem('auth_token');
-    const response = await axios.get('/api/export/monthly-report', {
-      headers: { Authorization: `Bearer ${token}` },
-      responseType: 'blob'
-    });
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `emolit_monthly_report.pdf`);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    try {
+      const token = localStorage.getItem('auth_token');
+      const response = await axios.get(`${API_BASE_URL}/export/monthly-report`, {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: 'blob'
+      });
+      
+      const fileName = `emolit_report_${new Date().toISOString().slice(0,10)}.pdf`;
+
+      if (Capacitor.isNativePlatform()) {
+        const reader = new FileReader();
+        reader.readAsDataURL(response.data);
+        reader.onloadend = async () => {
+          const base64Data = reader.result as string;
+          // CRITICAL: Strip the "data:application/pdf;base64," prefix for Capacitor!
+          const rawBase64 = base64Data.split(',')[1];
+          
+          const savedFile = await Filesystem.writeFile({
+            path: fileName,
+            data: rawBase64,
+            directory: Directory.Documents,
+          });
+
+          await Share.share({
+            title: 'Emolit Report',
+            text: 'Your emotional evolution summary.',
+            url: savedFile.uri,
+          });
+        };
+      } else {
+        const blob = new Blob([response.data], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', fileName);
+        document.body.appendChild(link);
+        link.click();
+        setTimeout(() => { window.URL.revokeObjectURL(url); link.remove(); }, 500);
+      }
+    } catch (error) {
+      console.error("PDF Export Error:", error);
+      throw error;
+    }
   },
 
   // Save / bookmark a word

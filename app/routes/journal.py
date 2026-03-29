@@ -46,10 +46,12 @@ async def submit_journal(request: JournalEntryRequest, user: dict = Depends(get_
             "entry_text": request.entry,
             "ai_response": {
                 "detected_emotions": analysis["detected_emotions"],
-                "emotional_observation": analysis["emotional_observation"],
-                "pattern_insight": analysis["pattern_insight"],
-                "reflection_question": analysis["reflection_question"],
-                "regulation_suggestion": analysis["regulation_suggestion"]
+                "recognize": analysis["recognize"],
+                "understand": analysis["understand"],
+                "label": analysis["label"],
+                "express": analysis["express"],
+                "regulate": analysis["regulate"],
+                "growth_action": analysis["growth_action"]
             },
             "entry_type": "journal_entry",
             "created_at": datetime.utcnow()
@@ -132,10 +134,12 @@ async def submit_voice_journal(file: UploadFile = File(...), user: dict = Depend
             "entry_text": transcript,
             "ai_response": {
                 "detected_emotions": analysis["detected_emotions"],
-                "emotional_observation": analysis["emotional_observation"],
-                "pattern_insight": analysis["pattern_insight"],
-                "reflection_question": analysis["reflection_question"],
-                "regulation_suggestion": analysis["regulation_suggestion"]
+                "recognize": analysis["recognize"],
+                "understand": analysis["understand"],
+                "label": analysis["label"],
+                "express": analysis["express"],
+                "regulate": analysis["regulate"],
+                "growth_action": analysis["growth_action"]
             },
             "entry_type": "voice_journal",
             "created_at": datetime.utcnow()
@@ -208,10 +212,12 @@ async def get_legacy_history(user: dict = Depends(get_current_user)):
                     "entry_id": str(j["_id"]),
                     "entry_text": j["entry_text"],
                     "detected_emotions": j["ai_response"]["detected_emotions"],
-                    "emotional_observation": j["ai_response"]["emotional_observation"],
-                    "pattern_insight": j["ai_response"]["pattern_insight"],
-                    "reflection_question": j["ai_response"]["reflection_question"],
-                    "regulation_suggestion": j["ai_response"]["regulation_suggestion"],
+                    "recognize": j["ai_response"]["recognize"],
+                    "understand": j["ai_response"]["understand"],
+                    "label": j["ai_response"]["label"],
+                    "express": j["ai_response"]["express"],
+                    "regulate": j["ai_response"]["regulate"],
+                    "growth_action": j["ai_response"]["growth_action"],
                     "created_at": j["created_at"].isoformat() + "Z" if isinstance(j["created_at"], datetime) else j["created_at"]
                 }
             })

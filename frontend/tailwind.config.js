@@ -21,9 +21,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        heading: ['Nunito', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
-        sans: ['DM Sans', 'sans-serif'],
+        heading: ['Playfair Display', 'serif'],
+        body: ['Outfit', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

@@ -27,11 +27,8 @@ const CalendarPage: React.FC = () => {
     useEffect(() => {
         const loadHistory = async () => {
             try {
-                const token = localStorage.getItem('auth_token');
-                const res = await axios.get('/api/journal/history', {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-                setHistory(res.data.entries || []);
+                const res = await emotionAPI.getJournalHistory();
+                setHistory(res.entries || []);
             } catch (e) {
                 console.error("Archive Sync Fail:", e);
             } finally {
@@ -144,8 +141,8 @@ const CalendarPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white text-dark-bg pb-32 pt-16">
-            <div className="px-6 max-w-[430px] mx-auto space-y-8">
+        <div className="min-h-screen bg-white text-dark-bg pb-32 pt-16 w-screen relative overflow-x-hidden left-0">
+            <div className="px-6 mx-auto space-y-8">
                 
                 {/* PREMIUM HEADER SECTION */}
                 <motion.div 
@@ -337,7 +334,7 @@ const CalendarPage: React.FC = () => {
                     ) : (
                         <div className="bg-white/50 rounded-3xl p-12 border border-dashed border-primary/10 text-center space-y-4">
                             <Compass className="w-10 h-10 text-primary/10 mx-auto" weight="duotone" />
-                            <p className="text-[10px] font-heading font-black uppercase tracking-[0.2em] text-secondary/30">Zero Neural Anchors Found</p>
+                            <p className="text-[10px] font-heading font-black uppercase tracking-[0.2em] text-secondary/30">No activity discovered yet</p>
                         </div>
                     )}
                 </div>

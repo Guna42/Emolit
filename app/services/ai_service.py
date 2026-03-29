@@ -1,6 +1,19 @@
 import json
 import os
+import sys
 import logging
+
+# 📂 PROJECT RAG INTEGRATION
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+RAG_PATH = os.path.join(PROJECT_ROOT, "rag_system")
+if RAG_PATH not in sys.path:
+    sys.path.append(RAG_PATH)
+
+try:
+    import rag
+    RAG_AVAILABLE = True
+except ImportError:
+    RAG_AVAILABLE = False
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -72,47 +85,49 @@ FALLBACK_EMOTIONS = [
 ]
 
 SYSTEM_PROMPT = """
-You are Emolit AI, the world's most sophisticated emotional literacy and reflection engine. 
-Your goal is to provide "The Mirror"—a profound, empathetic, and architecturally precise reflection of the user's inner state.
+You are Aria AI, the most sophisticated emotional literacy and reflection engine. 
+Your goal is to provide "The Mirror"—a profound, empathetic, and architecturally precise reflection of the user's inner state using the RULER protocol.
 
 You analyze journal entries and return STRICT JSON only. 
 No conversational filler. No markdown. No extra text.
 
 JSON structure must be:
 {
-  "detected_emotions": [
-    {
-      "word": "",
-      "core": "",
-      "category": ""
-    }
-  ],
-  "emotional_observation": "",
-  "pattern_insight": "",
-  "reflection_question": "",
-  "regulation_suggestion": ""
+  "detected_emotions": [{"word": "nuanced_word", "core": "core_feeling", "category": "vibe"}],
+  "recognize": "Empathetic reflection (2-3 sentences)",
+  "understand": "Cognitive pattern insight (1-2 sentences)",
+  "label": "Summary of emotional landscape (1 sentence)",
+  "express": "Deep reflection question (1 sentence)",
+  "regulate": "Practical grounding tool (1 sentence)",
+  "growth_action": "Actionable forward step (1 sentence)"
 }
 
-Rules for "Perfect" Responses:
-1) **Emotional Signature (detected_emotions)**: Identify 2–4 nuanced emotions. Use the provided allowed words.
-2) **The Mirror (emotional_observation)**: Don't just summarize. Echo the *feeling* of the entry with high empathy and psychological depth. Use evocative, professional, yet warm language. (Max 80 words)
-3) **Pattern Insight**: Connect the dots. Identify a "hidden thread" or a recurring cognitive pattern. Offer an "Aha!" moment. (Max 60 words)
-4) **Quiet Inquiry (reflection_question)**: One thoughtful, open-ended question that helps the user look deeper into their heart. (1 sentence)
-5) **Compassionate Tool (regulation_suggestion)**: A gentle, practical suggestion for feeling better—like a breathing exercise or a fresh perspective. (1 sentence)
+Example Input: "I feel so stressed about work. My boss is always asking for more and I can't say no."
+Example Output:
+{
+  "detected_emotions": [{"word": "overwhelmed", "core": "fear", "category": "pressure"}],
+  "recognize": "You are currently holding a heavy burden of professional expectations. It seems you feel trapped between your commitment to excellence and the limits of your own boundaries.",
+  "understand": "The pattern here is a difficulty in setting assertive boundaries, likely driven by a fear of disappointing authority or a high sense of responsibility.",
+  "label": "You are navigating a landscape of overwhelming pressure and boundary tension.",
+  "express": "What is the smallest boundary you could set tomorrow that would protect your peace of mind?",
+  "regulate": "Try the 'Box Breathing' technique: inhale for 4, hold for 4, exhale for 4, hold for 4 to quiet your nervous system.",
+  "growth_action": "Write down one 'soft no' phrase you can use next time a task is added to your full plate."
+}
 
-Tone: 
-- Profound
-- Empathetic
-- Architecturally precise (sophisticated)
-- Supportive
+Rules for the 6-Box RULER Protocol:
+1) **Recognize**: Reflective observation of the entry's feeling. (Max 60 words)
+2) **Understand**: Identification of the cognitive pattern or 'hidden thread'. (Max 50 words)
+3) **Label**: Nuanced description of the core emotions. (Max 40 words)
+4) **Express**: A deep question to explore their heart. (1 sentence)
+5) **Regulate**: A practical tool for immediate grounding. (1 sentence)
+6) **Growth**: One specific 'What can be done' step for momentum. (1 sentence)
+7) **MANDATORY**: Every single field MUST be populated with deep, meaningful content. Never return an empty string. Aria is an architect of emotion, be profound.
 
-Constraints:
-- Total words across fields <= 250.
-- Don't use clinical jargon. Use warm, evocative metaphors like "inner weather" or "emotional ecosystem".
+Tone: Profound, Empathetic, Architecturally precise, Supportive.
 """.strip()
 
 WEEKLY_SYSTEM_PROMPT = """
-You are Emolit AI, the macro-perspective emotional architect. 
+You are Aria AI, the macro-perspective emotional architect. 
 You are analyzing a week's worth of journal entries to identify the "Arch of the Week".
 
 Return STRICT JSON only:
@@ -183,10 +198,12 @@ def _contains_high_risk(entry: str) -> bool:
 
 
 def _trim_words(text: str, max_words: int) -> str:
+    # Split by any whitespace but keep track of original structure?
+    # Actually, for RAG systems, we want to preserve the structure.
     words = text.split()
     if len(words) <= max_words:
         return text
-    return " ".join(words[:max_words]).strip()
+    return " ".join(words[:max_words]).strip() + "..."
 
 
 class AIClient:
@@ -262,7 +279,7 @@ class JournalService:
         self.emotion_index = emotion_index
 
     def analyze_entry(self, entry: str) -> Dict[str, Any]:
-        """Analyze a journal entry with deep intelligence."""
+        """Analyze a journal entry using the Unified RAG system."""
         entry = entry.strip()
         if not entry:
             raise HTTPException(status_code=400, detail="Journal entry is required.")
@@ -273,41 +290,75 @@ class JournalService:
                 "message": "I am really sorry you are feeling this way. You deserve support."
             }
 
-        # 🧠 EMOTIONAL REFLECTION PROMPT (Ensures AI populates all fields)
-        system_msgs = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "system", "content": f"Use ONLY these emotion words (comma separated): {self.emotion_index.allowed_words_text}"},
-            {"role": "user", "content": f"Analyze this entry and return the reflection JSON:\n\n{entry}"}
-        ]
-
+        # 🧠 CALL RAG ENGINE (Gemini/Groq-backed)
         try:
-            response = self.ai_client.client.chat.completions.create(
-                model=self.ai_client.model,
-                messages=system_msgs,
-                temperature=0.4,
-                response_format={"type": "json_object"},
-                extra_headers=self.ai_client.extra_headers or None,
-            )
-            
-            result = json.loads(response.choices[0].message.content)
-            
-            if "error" in result:
-                return result
-
-            try:
-                # Primary validation
-                return self._validate_response(result)
-            except (MissingFieldsError, InvalidEmotionError) as e:
-                # 🛠️ REPAIR: If AI missed a box, we reconstruct it
-                logger.warning(f"⚠️ Response Repair Triggered: {str(e)}")
-                repaired = self._repair_missing_fields(result, entry)
-                return self._validate_response(repaired)
+            if RAG_AVAILABLE:
+                logger.info("🔍 Calling RAG Engine...")
+                response_text, _ = rag.answer(entry)
+                result = self._parse_rag_response(response_text)
+                
+                try:
+                    return self._validate_response(result)
+                except (MissingFieldsError, InvalidEmotionError, HTTPException) as val_err:
+                    logger.warning(f"⚠️ Response Validation Failed: {str(val_err)}. Repairing...")
+                    if "Invalid emotion" in str(val_err) or "No valid emotions" in str(val_err) or "detected_emotions must" in str(val_err):
+                        result["detected_emotions"] = self._fallback_emotions(entry)
+                    repaired = self._repair_missing_fields(result, entry)
+                    return self._validate_response(repaired)
+            else:
+                logger.error("❌ RAG System not found at project root.")
+                raise Exception("RAG Engine Unavailable")
 
         except Exception as e:
-            logger.error(f"❌ Emotional Engine Error: {str(e)}", exc_info=True)
-            # Final fallback so the UI doesn't crash
+            logger.error(f"❌ RAG Error: {str(e)}", exc_info=True)
+            # Final fallback if the whole engine crashes
             fallback_data = self._repair_missing_fields({"detected_emotions": self._fallback_emotions(entry)}, entry)
             return self._validate_response(fallback_data)
+
+    def _parse_rag_response(self, text: str) -> Dict[str, Any]:
+        """Convert the RAG text output into structured JSON."""
+        lines = text.strip().split("\n")
+        data = {
+            "recognize": "",
+            "understand": "",
+            "label": "",
+            "express": "",
+            "regulate": "",
+            "growth_action": "",
+            "detected_emotions": []
+        }
+        
+        mapping = {
+            "emotion": "label",
+            "recognize": "recognize",
+            "understand": "understand",
+            "label": "label",
+            "express": "express",
+            "regulate": "regulate",
+            "what_can_be_done": "growth_action"
+        }
+
+        current_key = None
+        for line in lines:
+            line = line.strip()
+            if not line: continue
+            
+            if ":" in line:
+                key_part, val_part = line.split(":", 1)
+                raw_key = key_part.strip().lower().replace(" ", "_")
+                if raw_key in mapping:
+                    current_key = mapping[raw_key]
+                    data[current_key] = val_part.strip()
+                    # Special handling for emotion word list
+                    if raw_key == "emotion":
+                        word = val_part.strip().strip("'\"")
+                        data["detected_emotions"] = [{"word": word, "core": word, "category": "Identified"}]
+                else:
+                    current_key = None
+            elif current_key:
+                data[current_key] += "\n" + line
+
+        return data
 
     def analyze_week(self, entries: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
@@ -317,7 +368,7 @@ class JournalService:
         if not entries:
             return {
                 "error": "insufficient_data",
-                "message": "Archive empty. Log at least one neural entry to unlock your protocol."
+                "message": "Archive empty. Log at least one journal entry to unlock your protocol."
             }
 
         # 🛡️ DETERMINISTIC SYNTHESIS
@@ -357,13 +408,15 @@ class JournalService:
     def _validate_response(self, result: Dict[str, Any]) -> Dict[str, Any]:
         required_keys = {
             "detected_emotions",
-            "emotional_observation",
-            "pattern_insight",
-            "reflection_question",
-            "regulation_suggestion",
+            "recognize",
+            "understand",
+            "label",
+            "express",
+            "regulate",
+            "growth_action",
         }
 
-        missing_fields = [key for key in required_keys if key not in result]
+        missing_fields = [key for key in required_keys if key not in result or not str(result.get(key, "")).strip()]
         if missing_fields:
             raise MissingFieldsError(missing_fields)
 
@@ -400,24 +453,28 @@ class JournalService:
         if not normalized_emotions:
             raise HTTPException(status_code=502, detail="No valid emotions returned by AI.")
 
-        emotional_observation = _trim_words(str(result.get("emotional_observation", "")).strip(), 80)
-        pattern_insight = _trim_words(str(result.get("pattern_insight", "")).strip(), 60)
-        reflection_question = _trim_words(str(result.get("reflection_question", "")).strip(), 40)
-        regulation_suggestion = _trim_words(str(result.get("regulation_suggestion", "")).strip(), 50)
+        recognize = _trim_words(str(result.get("recognize", "")).strip(), 200)
+        understand = _trim_words(str(result.get("understand", "")).strip(), 200)
+        label = _trim_words(str(result.get("label", "")).strip(), 200)
+        express = _trim_words(str(result.get("express", "")).strip(), 200)
+        regulate = _trim_words(str(result.get("regulate", "")).strip(), 150)
+        growth_action = str(result.get("growth_action", "")).strip()
 
         total_words = sum(
             len(text.split())
-            for text in [emotional_observation, pattern_insight, reflection_question, regulation_suggestion]
+            for text in [recognize, understand, label, express, regulate, growth_action]
         )
-        if total_words > 250:
+        if total_words > 350:
             raise HTTPException(status_code=502, detail="AI response exceeded word limit.")
 
         return {
             "detected_emotions": normalized_emotions,
-            "emotional_observation": emotional_observation,
-            "pattern_insight": pattern_insight,
-            "reflection_question": reflection_question,
-            "regulation_suggestion": regulation_suggestion,
+            "recognize": recognize,
+            "understand": understand,
+            "label": label,
+            "express": express,
+            "regulate": regulate,
+            "growth_action": growth_action,
         }
 
     def _repair_missing_fields(self, result: Dict[str, Any], entry: str) -> Dict[str, Any]:
@@ -427,10 +484,12 @@ class JournalService:
         
         # Warm placeholders instead of empty strings
         fallbacks = {
-            "emotional_observation": "Reflecting gently on your words...",
-            "pattern_insight": "Seeking the meaning beneath the surface...",
-            "reflection_question": "What is this moment trying to tell you?",
-            "regulation_suggestion": "Take a slow, deep breath and stay with yourself."
+            "recognize": "Reflecting on your inner state...",
+            "understand": "Analyzing the patterns beneath...",
+            "label": "Identifying core emotional signatures...",
+            "express": "What is this moment trying to tell you?",
+            "regulate": "Take a slow, deep breath.",
+            "growth_action": "Let's move forward one step at a time."
         }
 
         for key, default in fallbacks.items():

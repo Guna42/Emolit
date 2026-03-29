@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { Mail, Lock, User, Loader2, ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
+import { Mail, Lock, User, Loader2, ArrowRight, ChevronRight, Sparkles, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const LoginPage: React.FC = () => {
@@ -15,6 +15,7 @@ const LoginPage: React.FC = () => {
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
         if (!authLoading && isAuthenticated) {
@@ -93,7 +94,7 @@ const LoginPage: React.FC = () => {
                                 {mode === 'login' ? 'Welcome Back.' : 'Start Fresh.'}
                             </h1>
                             <p className="text-xs text-secondary/40 font-black uppercase tracking-widest">
-                                {mode === 'login' ? 'Sync your neural journal' : 'Begin your emotional odyssey'}
+                                {mode === 'login' ? 'Sync your emotional journey' : 'Begin your emotional odyssey'}
                             </p>
                         </div>
 
@@ -129,17 +130,24 @@ const LoginPage: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="group">
+                                <div className="group text-left">
                                     <div className="relative">
                                         <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-primary/20 w-5 h-5 group-focus-within:text-primary transition-colors" />
                                         <input
-                                            type="password"
+                                            type={showPassword ? "text" : "password"}
                                             required
-                                            className="w-full bg-light-bg/50 border border-primary/5 rounded-[1.5rem] py-5 pl-16 pr-6 text-primary font-bold focus:ring-4 focus:ring-primary/5 focus:bg-white focus:border-primary/20 outline-none transition-all placeholder:text-secondary/10 text-lg"
+                                            className="w-full bg-light-bg/50 border border-primary/5 rounded-[1.5rem] py-5 pl-16 pr-14 text-primary font-bold focus:ring-4 focus:ring-primary/5 focus:bg-white focus:border-primary/20 outline-none transition-all placeholder:text-secondary/10 text-lg"
                                             placeholder="Password"
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
+                                        <button 
+                                            type="button" 
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute right-6 top-1/2 -translate-y-1/2 text-primary/20 hover:text-primary transition-colors"
+                                        >
+                                            {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -174,7 +174,7 @@ const JournalHistoryPage: React.FC = () => {
                         </div>
                         <div className="text-left">
                             <h4 className="text-sm font-heading font-black text-primary uppercase tracking-widest">Download Report</h4>
-                            <p className="text-xs text-secondary/40 font-body">Get your monthly neural protocol</p>
+                            <p className="text-xs text-secondary/40 font-body">Get your weekly protocol</p>
                         </div>
                     </div>
                     {isExporting ? <Loader2 size={24} className="animate-spin text-accent" /> : (
@@ -348,8 +348,8 @@ const JournalHistoryPage: React.FC = () => {
                                                         <Brain size={18} />
                                                     </div>
                                                     <div className="space-y-1">
-                                                        <p className="text-[10px] font-black uppercase tracking-widest text-secondary/30">Insight</p>
-                                                        <p className="text-xs font-bold text-secondary italic leading-relaxed">"{journalEntry.pattern_insight}"</p>
+                                                        <p className="text-[10px] font-black uppercase tracking-widest text-secondary/30">Emotional Signature</p>
+                                                        <p className="text-xs font-bold text-secondary italic leading-relaxed">{journalEntry.understand}</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-4">
@@ -357,8 +357,8 @@ const JournalHistoryPage: React.FC = () => {
                                                         <Zap size={18} />
                                                     </div>
                                                     <div className="space-y-1">
-                                                        <p className="text-[10px] font-black uppercase tracking-widest text-secondary/30">Growth</p>
-                                                        <p className="text-xs font-bold text-secondary leading-snug">{journalEntry.regulation_suggestion}</p>
+                                                        <p className="text-[10px] font-black uppercase tracking-widest text-secondary/30">Success Action</p>
+                                                        <p className="text-xs font-bold text-secondary leading-snug whitespace-pre-line">{journalEntry.growth_action}</p>
                                                     </div>
                                                 </div>
                                             </div>

@@ -157,10 +157,10 @@ const JournalPage: React.FC = () => {
 
   return (
     <div 
-      className="min-h-screen transition-colors duration-1000 text-dark-bg pb-40 pt-10 px-6 font-body"
+      className="min-h-screen transition-colors duration-1000 text-dark-bg pb-40 pt-10 px-6 font-body w-screen relative overflow-x-hidden left-0"
       style={{ backgroundColor: activeMood.bg }}
     >
-      <div className="max-w-[430px] mx-auto space-y-10 relative z-10">
+      <div className="mx-auto space-y-6 relative z-10">
         
         {/* Dynamic Ambient Background Elements */}
         <motion.div 
@@ -183,7 +183,7 @@ const JournalPage: React.FC = () => {
                 <CaretLeft size={20} weight="bold" />
             </button>
             <div className="text-right">
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary/30">Sanctuary Mode</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary/30">Sanctuary Experience</p>
                 <p className="text-xs font-black text-primary italic opacity-60">{currentDate}</p>
             </div>
         </motion.div>
@@ -194,7 +194,7 @@ const JournalPage: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="space-y-1"
         >
-            <h1 className="text-4xl font-heading font-black text-primary leading-none tracking-tighter">
+            <h1 className="text-2xl font-heading font-black text-primary leading-none tracking-tighter">
                 What's on your <br/>
                 <span className="italic" style={{ color: activeMood.accent }}>mind?</span>
             </h1>
@@ -208,7 +208,7 @@ const JournalPage: React.FC = () => {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className={`bg-white rounded-[2.5rem] p-8 shadow-2xl transition-all duration-1000 border border-primary/5`}
+            className={`bg-white rounded-[2rem] p-6 shadow-xl transition-all duration-1000 border border-primary/5`}
             style={{ 
               boxShadow: `0 30px 60px -15px rgba(${activeMood.accent.includes('amber') ? '251,191,36' : 
                                activeMood.accent.includes('emerald') ? '52,211,153' : 
@@ -217,18 +217,9 @@ const JournalPage: React.FC = () => {
             }}
         >
             <div className="flex justify-between items-center mb-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-secondary/40">Mood Signature</span>
-                <motion.span 
-                    key={activeMood.label}
-                    initial={{ y: 5, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    className="px-4 py-1.5 rounded-xl text-[10px] font-black text-white uppercase shadow-xl"
-                    style={{ backgroundColor: activeMood.accent }}
-                >
-                    {activeMood.label}
-                </motion.span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-secondary/40">Current Mood</span>
             </div>
-            <div className="flex justify-between items-center relative gap-2 px-2">
+            <div className="flex justify-center items-center relative gap-2">
                 {MOODS.map((m, idx) => {
                     const isActive = selectedMood === idx;
                     return (
@@ -236,17 +227,17 @@ const JournalPage: React.FC = () => {
                             <motion.button
                                 whileTap={{ scale: 0.8 }}
                                 onClick={() => setSelectedMood(idx)}
-                                className={`relative h-16 w-16 flex items-center justify-center transition-all duration-500 ${isActive ? 'z-10' : 'opacity-20 grayscale hover:opacity-100'}`}
+                                className={`relative h-14 w-14 flex items-center justify-center transition-all duration-500 ${isActive ? 'z-20' : 'opacity-20 grayscale hover:opacity-100'}`}
                             >
                                 <motion.img 
                                     animate={{ 
-                                      y: isActive ? -12 : 0,
-                                      scale: isActive ? 1.4 : 1,
+                                      y: isActive ? -15 : 0,
+                                      scale: isActive ? 1.5 : 1,
                                     }}
-                                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                                    transition={{ type: 'spring', stiffness: 500, damping: 25 }}
                                     src={m.img} 
                                     alt={m.label} 
-                                    className="w-11 h-11 relative z-10" 
+                                    className="w-12 h-12 relative z-10 block mx-auto" 
                                 />
                                 {isActive && (
                                     <motion.div 
@@ -266,7 +257,7 @@ const JournalPage: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className={`bg-white rounded-[3rem] transition-all duration-1000 border border-primary/5 flex flex-col min-h-[380px] relative overflow-hidden`}
+            className={`bg-white rounded-[2rem] transition-all duration-1000 border border-primary/5 flex flex-col min-h-[300px] relative overflow-hidden`}
             style={{ 
               boxShadow: `0 40px 80px -20px rgba(0,0,0,0.08)`
             }}
@@ -309,12 +300,12 @@ const JournalPage: React.FC = () => {
                 )}
             </AnimatePresence>
 
-            <div className="flex-1 p-10 flex flex-col">
+            <div className="flex-1 p-6 pb-4 flex flex-col">
                 <textarea
                   value={entry}
                   onChange={(e) => setEntry(e.target.value)}
                   placeholder="Drop your thoughts here..."
-                  className="flex-1 w-full bg-transparent border-none resize-none text-2xl text-primary placeholder:text-secondary/10 focus:ring-0 leading-relaxed font-body font-bold focus:outline-none min-h-[200px]"
+                  className="flex-1 w-full bg-transparent border-none resize-none text-xl text-primary placeholder:text-secondary/10 focus:ring-0 leading-relaxed font-body font-bold focus:outline-none min-h-[150px]"
                 />
 
                 <div className="mt-8 flex items-center gap-4">
@@ -345,7 +336,7 @@ const JournalPage: React.FC = () => {
                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         ) : (
                             <>
-                                <span className="text-[11px] font-black uppercase tracking-[0.4em] ml-2">Analyze Pattern</span>
+                                <span className="text-[11px] font-black uppercase tracking-[0.4em] ml-2">Analyze Thought</span>
                                 <PaperPlaneTilt size={20} weight="duotone" className="group-hover:translate-x-1.5 group-hover:-translate-y-1.5 transition-transform duration-500" />
                             </>
                         )}
@@ -354,129 +345,81 @@ const JournalPage: React.FC = () => {
             </div>
         </motion.div>
 
-        {/* RESULTS - LIQUID PRESENTATION */}
+        {/* RESULTS - RULER BENTO PROTOCOL */}
         <AnimatePresence>
             {result && (
                 <motion.div 
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     id="analysis-dashboard" 
-                    className="space-y-8 pb-10"
+                    className="space-y-6 pb-16"
                 >
-                            <div className="flex items-center gap-4">
-                                <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-primary/5"></div>
-                                <h2 className="text-lg font-black text-primary italic px-4">Instant Insight</h2>
-                                <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-primary/5"></div>
-                            </div>
+                    <div className="pt-4" />
 
-                            <motion.div 
-                                whileHover={{ y: -5 }}
-                                className="bg-primary rounded-[2.5rem] p-10 text-white shadow-2xl shadow-primary/30 relative overflow-hidden"
-                            >
-                                <Sparkle className="absolute right-6 top-6 w-20 h-20 text-white/5 rotate-12" />
-                                <div className="flex items-center gap-3 mb-6">
-                                    <Brain size={16} className="text-accent" />
-                                    <span className="text-[9px] font-black uppercase tracking-[0.45em] text-white/40">Neural Mirror</span>
-                                </div>
-                                <p className="text-2xl font-heading font-black leading-tight italic relative z-10">
-                                    "{result.pattern_insight}"
-                                </p>
-                            </motion.div>
-
-                            <div className="grid grid-cols-1 gap-6">
-                                <motion.div 
-                                    whileHover={{ scale: 1.02 }}
-                                    className={`rounded-[2.5rem] p-10 backdrop-blur-md border border-white/40 shadow-xl transition-all duration-1000 space-y-8`}
-                                    style={{ 
-                                        backgroundColor: activeMood.bg + 'BB'
-                                    }}
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <Heart size={20} className="text-rose-500/40" />
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-secondary/30">Detected Shifts</span>
-                                    </div>
-                                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-col gap-6">
+                        {/* BOX 1: THE RULER ANALYSIS */}
+                        <motion.div 
+                            whileHover={{ y: -4 }}
+                            className="bg-primary rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden"
+                        >
+                            <Sparkle className="absolute right-[-10%] top-[-10%] w-40 h-40 text-white/5 rotate-12" />
+                            <div className="space-y-6 relative z-10">
+                                
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-accent/50">Emotion</p>
+                                    <div className="flex flex-wrap gap-2 pt-1">
                                         {result.detected_emotions?.map((e, idx) => (
-                                            <span key={idx} className="px-4 py-2 bg-white/50 text-primary text-[10px] font-black rounded-xl uppercase tracking-widest border border-primary/5">
+                                            <span key={idx} className="px-3 py-1 bg-white/10 text-white text-[10px] font-bold rounded-lg border border-white/10 uppercase tracking-widest">
                                                 {e.word}
                                             </span>
                                         ))}
                                     </div>
-                                    <p className="text-lg font-body font-medium text-secondary/70 leading-relaxed border-l-4 border-accent/20 pl-6 italic">
-                                        {result.emotional_observation}
-                                    </p>
-                                </motion.div>
+                                </div>
 
-                                <motion.div 
-                                    whileHover={{ scale: 1.02 }}
-                                    className={`border border-white/20 rounded-[2.5rem] p-10 space-y-4 backdrop-blur-sm transition-all duration-1000`}
-                                    style={{ 
-                                        backgroundColor: activeMood.bg + '77'
-                                    }}
-                                >
-                                    <div className="flex items-center gap-3 font-black text-[10px] uppercase tracking-widest text-primary/60">
-                                        <Pulse size={16} weight="bold" /> Regulation Protocol
-                                    </div>
-                                    <p className="text-lg font-heading font-black text-primary leading-tight">
-                                        {result.regulation_suggestion}
-                                    </p>
-                                </motion.div>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Recognize</p>
+                                    <p className="text-sm font-body font-bold leading-relaxed">{result.recognize}</p>
+                                </div>
 
-                                 <motion.div 
-                                    whileHover={{ scale: 1.02 }}
-                                    className="bg-white border border-primary/5 rounded-[2.5rem] p-10 text-center space-y-4 transition-all duration-1000"
-                                >
-                                     <Sparkle className="w-5 h-5 text-accent mx-auto" weight="duotone" />
-                                     <p className="text-xl font-heading font-black text-primary italic leading-tight">
-                                        "{result.reflection_question}"
-                                     </p>
-                                </motion.div>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Understand</p>
+                                    <p className="text-sm font-body font-bold text-white/80 leading-relaxed">{result.understand}</p>
+                                </div>
 
-                                {/* SOUL COMPASS / CTA - High Contrast Signature Card */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.6 }}
-                                    className="relative p-12 rounded-[3rem] overflow-hidden shadow-2xl group"
-                                    style={{ 
-                                      backgroundColor: activeMood.accent,
-                                      boxShadow: `0 30px 60px -15px ${activeMood.accent}66`
-                                    }}
-                                >
-                                    {/* Decorative Mesh */}
-                                    <div className="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse" />
-                                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-black/10 rounded-full -ml-16 -mb-16 blur-2xl" />
-                                    
-                                    <div className="relative z-10 space-y-6">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
-                                                <Compass size={24} weight="duotone" />
-                                            </div>
-                                            <div>
-                                                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/60 block">Inner Guidance</span>
-                                                <h3 className="text-xl font-heading font-black text-white italic">Soul Compass</h3>
-                                            </div>
-                                        </div>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Label</p>
+                                    <p className="text-sm font-body font-bold text-white/80 leading-relaxed">{result.label}</p>
+                                </div>
 
-                                        <p className="text-xl font-heading font-black text-white leading-tight italic">
-                                            "Acknowledge how far you've come today. Self-reflection is not just an act, it's a practice of self-love."
-                                        </p>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Express</p>
+                                    <p className="text-sm font-body font-bold text-white/80 italic leading-relaxed">"{result.express}"</p>
+                                </div>
 
-                                        <div className="h-[1px] w-full bg-white/20" />
-
-                                        <p className="text-[11px] font-body text-white/70 leading-relaxed font-bold">
-                                            Your emotional patterns build over time. Checking in daily is how you turn these small insights into lasting mental clarity. See you tomorrow for your next step.
-                                        </p>
-
-                                        <button 
-                                            onClick={() => navigate('/')}
-                                            className="w-full py-4 bg-white text-primary rounded-2xl font-black uppercase text-[10px] tracking-[0.3em] flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/10"
-                                        >
-                                            Continue Journey <ArrowRight size={16} weight="bold" />
-                                        </button>
-                                    </div>
-                                </motion.div>
+                                <div className="space-y-1">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Regulate</p>
+                                    <p className="text-sm font-body font-bold text-white/80 leading-relaxed">{result.regulate}</p>
+                                </div>
                             </div>
+                        </motion.div>
+
+                        {/* BOX 2: WHAT CAN BE DONE */}
+                        <motion.div
+                            whileHover={{ y: -4 }}
+                            className="relative p-10 rounded-[2.5rem] overflow-hidden group shadow-xl border border-primary/5 bg-white"
+                        >
+                            <div className="relative z-10 space-y-6">
+                                <div className="flex items-center gap-3">
+                                    <Compass size={20} weight="duotone" className="text-primary/40" />
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary/30">What can be done</span>
+                                </div>
+
+                                <p className="text-sm font-body font-bold text-secondary leading-relaxed whitespace-pre-line">
+                                    {result.growth_action}
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>
