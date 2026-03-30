@@ -27,6 +27,15 @@ from app.database import Database, get_collection
 from app.auth import get_current_user
 
 # --- Lifecycle ---
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "service": "Aria AI Sync Service",
+        "engine": "RAG-ready (Groq/Gemini)",
+        "version": "2.0.0"
+    }
+
 @app.on_event("startup")
 async def startup():
     try:
