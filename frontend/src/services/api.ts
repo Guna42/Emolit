@@ -3,12 +3,15 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && !Capacitor.isNativePlatform()
   ? 'http://localhost:8000' 
   : 'https://emolit-api.onrender.com';
 
+console.log('[Emolit] Active Backend:', API_BASE_URL);
+
 const api = axios.create({
   baseURL: API_BASE_URL,
+  timeout: 45000, 
   headers: {
     'Content-Type': 'application/json',
   },
