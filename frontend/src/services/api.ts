@@ -11,7 +11,7 @@ console.log('[Emolit] Active Backend:', API_BASE_URL);
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 45000, 
+  timeout: 90000, 
   headers: {
     'Content-Type': 'application/json',
   },
