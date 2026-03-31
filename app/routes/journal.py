@@ -98,7 +98,7 @@ async def submit_voice_journal(file: UploadFile = File(...), user: dict = Depend
                 headers=headers,
                 data=data,
                 files=files,
-                timeout=30.0
+                timeout=60.0
             )
             
             if response.status_code != 200:

@@ -293,8 +293,9 @@ class JournalService:
         # 🧠 CALL RAG ENGINE (Gemini/Groq-backed)
         try:
             if RAG_AVAILABLE:
-                logger.info("🔍 Calling RAG Engine...")
+                logger.info("🔍 [ARIA] Step 1: Invoking RAG Engine...")
                 response_text, _ = rag.answer(entry)
+                logger.info("✅ [ARIA] Step 2: RAG Response Received.")
                 result = self._parse_rag_response(response_text)
                 
                 try:
