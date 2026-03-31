@@ -121,7 +121,9 @@ const JournalPage: React.FC = () => {
         }, 500);
       }
     } catch (error: any) {
-      toast.error('System error. Please try again later.', { id: loadingToast });
+      console.error('[Emolit] Voice Sync Error:', error);
+      const detail = error.response?.data?.detail || error.message || 'Check your mic settings';
+      toast.error(`Mic Sync Error: ${detail}`, { id: loadingToast });
     } finally {
       setLoading(false);
     }
