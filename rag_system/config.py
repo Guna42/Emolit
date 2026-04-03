@@ -11,7 +11,7 @@ GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 # Models
 LLM_MODEL: str = "gemini-1.5-flash"
-GROQ_MODEL: str = "llama-3.3-70b-versatile"
+GROQ_MODEL: str = "llama-3.1-8b-instant"
 LLM_MAX_TOKENS: int = 1024
 
 # ── Embedding model (runs locally via sentence-transformers) ───────────────

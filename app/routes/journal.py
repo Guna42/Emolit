@@ -24,8 +24,9 @@ async def submit_journal(request: JournalEntryRequest, user: dict = Depends(get_
     """Analyze and store structured journal entry."""
     logger.info(f"📥 Received journal entry from {user.get('email')}")
     try:
+        import asyncio
         service = get_journal_service()
-        analysis = service.analyze_entry(request.entry)
+        analysis = await asyncio.to_thread(service.analyze_entry, request.entry)
         
         if "error" in analysis:
             return analysis
@@ -115,8 +116,9 @@ async def submit_voice_journal(file: UploadFile = File(...), user: dict = Depend
         # 3. Reuse the existing journal analysis logic
         logger.info(f"✨ Transcribed: \"{transcript[:100]}...\"")
         
+        import asyncio
         service = get_journal_service()
-        analysis = service.analyze_entry(transcript)
+        analysis = await asyncio.to_thread(service.analyze_entry, transcript)
         
         if "error" in analysis:
             return analysis
@@ -195,7 +197,12 @@ async def track_word_learned(request: TrackWordRequest, user: dict = Depends(get
 @router.get("/api/journal/history")
 async def get_legacy_history(user: dict = Depends(get_current_user)):
     try:
-        user_id = ObjectId(user["user_id"])
+        user_id_str = user["user_id"]
+        try:
+            user_id = ObjectId(user_id_str)
+        except Exception:
+            user_id = user_id_str
+            
         journals_col = get_collection("journal_entries")
         learned_col = get_collection("learned_words")
         
@@ -206,43 +213,45 @@ async def get_legacy_history(user: dict = Depends(get_current_user)):
         
         combined = []
         for j in journals:
+            ai_resp = j.get("ai_response", {})
             combined.append({
                 "type": "journal",
                 "data": {
-                    "entry_id": str(j["_id"]),
-                    "entry_text": j["entry_text"],
-                    "detected_emotions": j["ai_response"]["detected_emotions"],
-                    "recognize": j["ai_response"]["recognize"],
-                    "understand": j["ai_response"]["understand"],
-                    "label": j["ai_response"]["label"],
-                    "express": j["ai_response"]["express"],
-                    "regulate": j["ai_response"]["regulate"],
-                    "growth_action": j["ai_response"]["growth_action"],
-                    "created_at": j["created_at"].isoformat() + "Z" if isinstance(j["created_at"], datetime) else j["created_at"]
+                    "entry_id": str(j.get("_id", "")),
+                    "entry_text": j.get("entry_text", ""),
+                    "detected_emotions": ai_resp.get("detected_emotions", []),
+                    "recognize": ai_resp.get("recognize", "Reflecting on your inner state..."),
+                    "understand": ai_resp.get("understand", "Analyzing patterns..."),
+                    "label": ai_resp.get("label", "Identifying emotions..."),
+                    "express": ai_resp.get("express", "What is this moment trying to tell you?"),
+                    "regulate": ai_resp.get("regulate", "Take a deep breath."),
+                    "growth_action": ai_resp.get("growth_action", "Let's move forward."),
+                    "created_at": j.get("created_at").isoformat() + "Z" if isinstance(j.get("created_at"), datetime) else str(j.get("created_at", ""))
                 }
             })
         for w in learned:
+            word_details = {
+                "word": w.get("word", "Unknown"),
+                "core": w.get("core", "Unknown"),
+                "category": w.get("category", "Unknown")
+            }
             combined.append({
                 "type": "learned_word",
                 "data": {
-                    "entry_id": str(w["_id"]),
-                    "word_details": {
-                        "word": w["word"],
-                        "core": w["core"],
-                        "category": w["category"]
-                    },
-                    "created_at": w["created_at"].isoformat() + "Z" if isinstance(w["created_at"], datetime) else datetime.utcnow().isoformat() + "Z"
+                    "entry_id": str(w.get("_id", "")),
+                    "word_details": word_details,
+                    "created_at": w.get("created_at").isoformat() + "Z" if isinstance(w.get("created_at"), datetime) else datetime.utcnow().isoformat() + "Z"
                 }
             })
         for s in saved:
             combined.append({
                 "type": "saved_word",
                 "data": {
-                    "entry_id": str(s["_id"]),
-                    "word": s["word"],
-                    "core": s["core"],
-                    "category": s["category"],
-                    "created_at": s["created_at"].isoformat() + "Z" if isinstance(s["created_at"], datetime) else datetime.utcnow().isoformat() + "Z"
+                    "entry_id": str(s.get("_id", "")),
+                    "word": s.get("word", ""),
+                    "core": s.get("core", ""),
+                    "category": s.get("category", ""),
+                    "created_at": s.get("created_at").isoformat() + "Z" if isinstance(s.get("created_at"), datetime) else datetime.utcnow().isoformat() + "Z"
                 }
             })
         

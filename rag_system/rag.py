@@ -25,12 +25,20 @@ from config import (
 
 # ── ChromaDB setup ─────────────────────────────────────────────────────────
 
+_chroma_client = None
+_embed_fn = None
+
 def _get_collection(name: str):
-    client = chromadb.PersistentClient(path=CHROMA_DIR)
-    ef     = embedding_functions.SentenceTransformerEmbeddingFunction(
-                 model_name=EMBED_MODEL
-             )
-    return client.get_collection(name=name, embedding_function=ef)
+    global _chroma_client, _embed_fn
+    if _chroma_client is None:
+        print("[rag] Initializing ChromaDB PersistentClient...")
+        _chroma_client = chromadb.PersistentClient(path=CHROMA_DIR)
+    if _embed_fn is None:
+        print("[rag] Loading SentenceTransformer Embedding Model into memory...")
+        _embed_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
+            model_name=EMBED_MODEL
+        )
+    return _chroma_client.get_collection(name=name, embedding_function=_embed_fn)
 
 
 # ── Retrieval ──────────────────────────────────────────────────────────────
@@ -95,9 +103,7 @@ def _format_citation(chunk: Dict, index: int) -> str:
 # ── Prompt construction ────────────────────────────────────────────────────
 SYSTEM_PROMPT = """You are an emotionally intelligent assistant.
 
-Your tone should be clear, structured, and human — not too casual and not too academic.
-
-STRICT FORMAT (must follow exactly):
+Your MUST output ONLY the following exact keys, with no bolding, no asterisks, no markdown, and no conversational intro.
 
 Emotion:
 Recognize:
@@ -108,31 +114,14 @@ Regulate:
 What can be done:
 
 RULES:
-- Emotion must be ONLY ONE word
-- Keep each section short (1–2 lines)
-- Use simple, clear language
-- No long or complex sentences
-- Do not repeat the same idea again and again
-
-WHAT CAN BE DONE RULES:
-- Give 3–4 practical steps
-- Steps should feel real and usable in daily life
-- Use simple psychology ideas like:
-  - focusing on one task
-  - taking small steps
-  - calming thoughts
-  - maintaining small habits
-- Do NOT mention psychology terms
-- Avoid vague advice like “take a break” without context
-- Each step should feel specific and helpful
-
-STYLE:
-- Make it suitable for a 20-year-old student under pressure
-- Keep it calm and supportive
-- Avoid robotic or overly emotional tone
-
-IMPORTANT:
-If the format is not followed exactly, the answer is incorrect.
+- "Emotion" must be 1 to 2 words only. (e.g. Overwhelmed, Disappointed)
+- "Recognize" through "Regulate" must EACH be EXACTLY ONE short, powerful, empathetic sentence.
+- Example Recognize: You felt humiliated in front of others.
+- Example Understand: Your manager's scolding affected your self-esteem.
+- Example Label: It's a normal feeling after a public criticism.
+- "What can be done" must be 2-3 short, highly actionable bullet points.
+- Do NOT use ANY markdown. DO NOT wrap keys in **. No introduction text.
+- If the format is not followed exactly, the system will crash.
 """
 def build_prompt(query: str, chunks: List[Dict]) -> str:
     citation_blocks = "\n".join(
@@ -147,10 +136,15 @@ def build_prompt(query: str, chunks: List[Dict]) -> str:
 
 # ── Generation ─────────────────────────────────────────────────────────────
 
+_groq_client = None
+
 def _generate_groq(prompt: str, system_msg: str) -> str:
     """Ultra-fast generation via Groq."""
-    client = OpenAI(base_url="https://api.groq.com/openai/v1", api_key=GROQ_API_KEY)
-    response = client.chat.completions.create(
+    global _groq_client
+    if _groq_client is None:
+        _groq_client = OpenAI(base_url="https://api.groq.com/openai/v1", api_key=GROQ_API_KEY)
+        
+    response = _groq_client.chat.completions.create(
         model=GROQ_MODEL,
         messages=[
             {"role": "system", "content": system_msg},
@@ -161,10 +155,15 @@ def _generate_groq(prompt: str, system_msg: str) -> str:
     )
     return response.choices[0].message.content
 
+_gemini_client = None
+
 def _generate_gemini(prompt: str, system_msg: str) -> str:
     """Fallback generation via Gemini."""
-    client = genai.Client(api_key=GEMINI_API_KEY)
-    response = client.models.generate_content(
+    global _gemini_client
+    if _gemini_client is None:
+        _gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+        
+    response = _gemini_client.models.generate_content(
         model=LLM_MODEL,
         contents=prompt,
         config=types.GenerateContentConfig(
@@ -192,17 +191,24 @@ def generate(query: str, chunks: List[Dict]) -> str:
 
 def answer(query: str) -> Tuple[str, List[Dict]]:
     """
-    Full RAG pipeline. Optimized for Render to prevent hangs.
+    Full RAG pipeline. Optimized for Render to prevent hangs and auto-heals empty DBs.
     """
     import time
+    from ingest import run_ingestion
     start_time = time.time()
     chunks = []
     
-    # 🏃 1. RETRIEVE (With safety timeout for cloud environments)
+    # 🏃 1. RETRIEVE (With auto-healing for empty databases)
     try:
         print(f"[rag] Starting retrieval for: {query[:50]}...")
-        # If retrieval is taking too long (e.g. disk I/O on Render), we skip it to provide a response
         chunks = retrieve(query)
+        
+        # 🧪 AUTO-HEALING: If DB is empty, run ingestion once and retry
+        if not chunks:
+            print("[rag] 🏗️ Database seems empty. Triggering auto-ingestion...")
+            run_ingestion()
+            chunks = retrieve(query) # Retry once
+            
         print(f"[rag] Retrieval complete in {time.time() - start_time:.2f}s (found {len(chunks)} chunks)")
     except Exception as e:
         print(f"[rag] ⚠️ Retrieval skipped due to error: {e}")

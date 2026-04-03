@@ -3,9 +3,9 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 
-// For testing Render from your laptop, we point this to the cloud URL.
-// Swap the comment below if you want to test with a LOCAL backend server again.
-const API_BASE_URL = 'https://emolit-api.onrender.com';
+// For testing LOCALLY from your laptop backend.
+const API_BASE_URL = 'http://localhost:8000';
+// const API_BASE_URL = 'https://emolit-api.onrender.com';
 
 console.log('[Emolit] Active Backend:', API_BASE_URL);
 

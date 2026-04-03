@@ -346,13 +346,13 @@ class JournalService:
             
             if ":" in line:
                 key_part, val_part = line.split(":", 1)
-                raw_key = key_part.strip().lower().replace(" ", "_")
+                raw_key = key_part.replace("*", "").strip().lower().replace(" ", "_").replace("-", "_")
                 if raw_key in mapping:
                     current_key = mapping[raw_key]
-                    data[current_key] = val_part.strip()
+                    data[current_key] = val_part.strip().replace("*", "")
                     # Special handling for emotion word list
                     if raw_key == "emotion":
-                        word = val_part.strip().strip("'\"")
+                        word = val_part.strip().replace("*", "").strip("'\"")
                         data["detected_emotions"] = [{"word": word, "core": word, "category": "Identified"}]
                 else:
                     current_key = None
