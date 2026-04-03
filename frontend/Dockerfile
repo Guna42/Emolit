@@ -1,6 +1,8 @@
 # 🏗️ Build stage
 FROM node:18-alpine as build-stage
 WORKDIR /app
+# 🔑 THE MAGIC LINE: Tell Node.js it can use 2GB of memory!
+ENV NODE_OPTIONS="--max-old-space-size=2048"
 COPY package*.json ./
 RUN npm install
 COPY . .
