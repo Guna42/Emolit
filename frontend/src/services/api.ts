@@ -3,8 +3,8 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 
-// For PRODUCTION using your NEW AWS EC2 HUB.
-const API_BASE_URL = 'http://13.62.58.50:8000';
+// For FINAL PRODUCTION using your AWS EC2 HUB.
+const API_BASE_URL = 'http://16.171.238.149:8000';
 
 console.log('[Emolit] Active Backend:', API_BASE_URL);
 
