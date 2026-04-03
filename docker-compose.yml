@@ -1,24 +1,30 @@
 version: '3.8'
 
 services:
+  # 🚀 FastAPI Neural Hub (Backend)
   backend:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: emolit-backend
     ports:
       - "8000:8000"
-    env_file:
-      - .env
-    volumes:
-      - ./app:/app/app
-      - ./static:/app/static
-    restart: unless-stopped
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - SARVAM_API_KEY=${SARVAM_API_KEY}
+    restart: always
 
+  # 🎨 React Premium Frontend
   frontend:
-    build: 
+    build:
       context: ./frontend
+      dockerfile: Dockerfile
     container_name: emolit-frontend
     ports:
-      - "80:80"
+      - "3000:80"
     depends_on:
       - backend
-    restart: unless-stopped
+    restart: always

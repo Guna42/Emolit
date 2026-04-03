@@ -3,9 +3,8 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 
-// For testing LOCALLY from your laptop backend.
-const API_BASE_URL = 'http://localhost:8000';
-// const API_BASE_URL = 'https://emolit-api.onrender.com';
+// For PRODUCTION using your AWS EC2 HUB.
+const API_BASE_URL = 'http://13.51.196.135:8000';
 
 console.log('[Emolit] Active Backend:', API_BASE_URL);
 
